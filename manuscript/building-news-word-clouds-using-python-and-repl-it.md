@@ -1,12 +1,12 @@
 # Building news word clouds using Python and Repl.it
 
-Word clouds are a popular way to visualise large amounts of text. Word clouds are images showing scattered words in different sizes, where words that appear more frequently in the given text are larger, and less common words are smaller or not shown at all. 
+Word clouds are a popular way to visualise large amounts of text. Word clouds are images showing scattered words in different sizes, where words that appear more frequently in the given text are larger, and less common words are smaller or not shown at all.
 
-In this tutorial, we'll build a web application using Python and Flask that transforms the latest news stories into word clouds and displays them to our visitors. 
+In this tutorial, we'll build a web application using Python and Flask that transforms the latest news stories into word clouds and displays them to our visitors.
 
 Our users will see a page similar to the one shown below, but containing the latest news headlines from BBC news. We'll learn some tricks about web scraping, RSS feeds, and building image files directly in memory along the way.
 
-![Final Demo](https://cdn.filestackcontent.com/i0IjIMSLmjQ7AI6yVQMA)
+![](https://cdn.filestackcontent.com/i0IjIMSLmjQ7AI6yVQMA)
 
 ## Overview
 We'll be building a simple web application step-by-step, and explaining each line of code in detail. To follow, you should have some basic knowledge of programming and web concepts, such as what if statements are and how to use URLs. Specifically, we'll:
@@ -29,11 +29,11 @@ In this tutorial, instead of scraping the links to news articles directly from t
 
 RSS feeds are published as XML documents. Every time BBC (and other places) publishes a new article to their home page, they also update an XML machine-readable document at http://feeds.bbci.co.uk/news/world/rss.xml. This is a fairly simple feed consisting of a `<channel>` element, which has some meta data and then a list of `<item>` elements, each of which represents a new article. The articles are arranged chronologically, with the newest ones at the top, so it's easy to retrieve new content.
 
-![XML](https://cdn.filestackcontent.com/bmIIvSSZSkqpuH9Gfcf0)
+![](https://cdn.filestackcontent.com/bmIIvSSZSkqpuH9Gfcf0)
 
 If you click on the link above, you won't see the XML directly. Instead it has some associated styling information so that most web browsers will display something that's a bit more human friendly. For example, opening the page in Google Chrome shows the page below. In order to view the raw XML directly, you can right click on the page and click "view source". 
 
-![Styled XML](https://cdn.filestackcontent.com/FnmetmDTN6aR5VdsAnCw)
+![](https://cdn.filestackcontent.com/FnmetmDTN6aR5VdsAnCw)
 
 RSS feeds are used internally by software such as the news reader [Feedly](feedly.com) and various email clients. We'll be consuming these RSS feeds with a Python library to retrieve the latest articles from BBC. 
 
@@ -41,11 +41,11 @@ RSS feeds are used internally by software such as the news reader [Feedly](feedl
 
 In this tutorial, we'll be building our web application using [repl.it](repl.it), which will allow us to have a consistent code editor, environment, and deployment framework in a single click. Head over there and create an account. Choose to create a Python repl, and you should see an editor where you can write and run Python code, similar to the image below. You can write Python code in the middle pane, run it by pressing the green "run" button, and see the output in the right pane. In the left pane, you can see a list of files, with `main.py` added there by default.
 
-![Repl Hello World](https://cdn.filestackcontent.com/bh3icyFSXuhstbqsw1cZ)
+![](https://cdn.filestackcontent.com/bh3icyFSXuhstbqsw1cZ)
 
 The first thing we want to do to access RSS feeds easily is install the Python [feedparser](https://pythonhosted.org/feedparser/) library. To install it in our Repl environment, we'll need to create a new file called `requirements.txt`. To do this, press the small "new file" button in the left pane, call the file exactly `requirements.txt` (Repl will recognise that this is a special file so it's important to name it correctly), and add the single line `feedparser` to this file to tell Repl to install the `feedparser` library.
 
-![Add requirements](https://cdn.filestackcontent.com/fHskeSjJTSGDovBpY32o)
+![](https://cdn.filestackcontent.com/fHskeSjJTSGDovBpY32o)
 
 ## Pulling data from our feed and extracting URLs
 
@@ -67,7 +67,7 @@ Feedparser does most of the heavy lifting for us, so we don't have to get too cl
 
 If you run this code, you should see a a few dozen URLs output on the right pane, as in the image below.
 
-![Printing URLs](https://cdn.filestackcontent.com/ptSi4TFHTCexuU7DasO5)
+![](https://cdn.filestackcontent.com/ptSi4TFHTCexuU7DasO5)
 
 ## Setting up a web application with Flask
 
@@ -75,7 +75,7 @@ We don't just want to print this data out in the Repl console. Instead our appli
 
 Switch back to the `requirements.txt` file and add a new line `flask` .This should now look as follows.
 
-![Requirements with Flask](https://cdn.filestackcontent.com/SFgt5TMESNiYejYCrOHQ)
+![](https://cdn.filestackcontent.com/SFgt5TMESNiYejYCrOHQ)
 
 Navigate back to the `main.py` file and modify our code to look as follows.
 
@@ -111,7 +111,7 @@ Here we still parse the feed and extract all of the latest article URLs, but ins
 
 Press "run" again, and you should see a new window appear in Repl in the top right. Here we can see a basic web page (viewable already to anyone in the world by sharing the URL you see above it), and we see the same output that we previously printed to the console. 
 
-![First Flask output](https://cdn.filestackcontent.com/9YDm81XR9eNQyY7y6lSQ)
+![](https://cdn.filestackcontent.com/9YDm81XR9eNQyY7y6lSQ)
 
 ## Downloading articles and extracting the text
 
@@ -119,7 +119,7 @@ The URLs aren't that useful to us, as we eventaully want to display a summary of
 
 In `requirements.txt` add the two new dependencies. Your file should now look like the one in the image below (I've kept them ordered alphabetically, which is good practice but not a strict requirement).
 
-![Adding more dependencies](https://cdn.filestackcontent.com/t5ALKH2dSqayREEEnkSF)
+![](https://cdn.filestackcontent.com/t5ALKH2dSqayREEEnkSF)
 
 Now we're ready to download the content from each article and serve that up to the user. Modify the code in `main.py` to look as follows.
 
@@ -166,7 +166,7 @@ Let's take a closer look at what has changed.
 
 If you run the code now, you should see output similar to that shown in the image below. You can see text from the first article about Trump and the US Trade gap in the top right pane now, and the text for the second article is further down the page. You'll notice that out text extraction algorithm isn't perfect and there's still some extra text about "Share this" at the top that isn't actually part of the article, but this is good enough for us to create word clouds from later.
 
-![Displaying aritcles](https://cdn.filestackcontent.com/k0zPgNVNREijxJCofvYy)
+![](https://cdn.filestackcontent.com/k0zPgNVNREijxJCofvYy)
 
 ## Returning HTML instead of plain text to the user
 
@@ -176,7 +176,7 @@ To use Flask's templates, we need to set up a specific file structure. Press the
 
 Select the new folder and press the "new file" button to create a new file inside our `templates` folder. Call the file `home.html`. Note below how the `home.html` file is indented one level, showing that it is inside the folder. If yours is not, drag and drop it into the `templates` folder so that Flask can find it.
 
-![Adding a folder](https://cdn.filestackcontent.com/7xRwMGRR2gCLPCljGYAt)
+![](https://cdn.filestackcontent.com/7xRwMGRR2gCLPCljGYAt)
 
 In the `home.html` file, add the following code, which is a mix between standard HTML and Jinja's templating syntax to mix dynamic content into the HTML.
 
@@ -220,7 +220,7 @@ The `render_template` call tells Flask to prepare some HTML to return to the use
 
 If everything went well, you should see different output now, which contains our header from the HTML and static first paragraph, followed by two paragraphs showing the same article content that we pulled before. 
 
-![First template](https://cdn.filestackcontent.com/frTNgvRpaHdFjp59g7q4)
+![](https://cdn.filestackcontent.com/frTNgvRpaHdFjp59g7q4)
 
 Now it's time to move on to generating the actual wordclouds.
 
@@ -228,7 +228,7 @@ Now it's time to move on to generating the actual wordclouds.
 
 Once again, there's a nifty Python library that can help us. This one will take in text and return word clouds as images. It's called `wordcloud` and can be installed in the same way as the others by adding it to our `requirements.txt` file. This is the last dependency we'll be adding, so the final `requirements.txt` file should look as follows.
 
-![Wordcloud Requirement](https://cdn.filestackcontent.com/eRMi9PHuTS6Dy6rEewO2)
+![](https://cdn.filestackcontent.com/eRMi9PHuTS6Dy6rEewO2)
 
 Images are usually served as files living on your server or from an image host like [imgur](imgur.com). Because we'll be creating small, short-lived images dynamically from text, we'll simply keep them in memory instead of saving them anywhere permanently. In order to do this, we'll have to mess around a bit with the Python `io` and `base64` libraries, alongside our newly installed `wordcloud` library.
 
@@ -243,7 +243,7 @@ import requests
 from /bs4 import BeautifulSoup
 from wordcloud import WordCloud
 from flask import Flask
-from flask import render_template 
+from flask import render_template
 ```
 
 We'll be converting the text from each article into a separate word cloud, so it'll be useful to have another helper function that can take text as input and produce the word cloud as output. We can use [base64](https://en.wikipedia.org/wiki/Base64) to represent the images, which can then be displayed directly in our visitors' web browsers.
@@ -293,7 +293,7 @@ We made changes on lines 4, 8, 9, and 10, to change to a `clouds` array, populat
 
 If you restart the Repl and refresh the page, you should see something similar to the following. We can see the same content about Trump, the US, tariffs, and trade deficits, but we can now see the important keywords without having to read the entire article.
 
-![first-word-clouds.png](https://cdn.filestackcontent.com/3rd1GrAHTWi2L7x9NZm0)
+![](https://cdn.filestackcontent.com/3rd1GrAHTWi2L7x9NZm0)
 
 For a larger view, you can pop out the website in a new browser tab using the button in the top right of the Repl editor (indicated in red above). 
 
