@@ -377,6 +377,6 @@ We've included several features in our web application, and looked at how to use
 - Our web application only shows articles from a single source (BBC), and only from today. We could add some more functionality to show articles from different sources and different time frames. We could also consider allowing the viewer to choose which category of articles to view (news, sport, politics, finance, etc) by using different RSS feeds as sources.
 - Our design and layout is very basic. We could make our site look better and be more responsive by adding more CSS. We could lay out the images in a grid of rows and columns to make it look better on smaller screens such as mobile phones. 
 
-If you'd like to keep working on the web application, simply head over to [the repl](https://repl.it/@GarethDwyer1/news-to-wordcloud) and fork it to continue your own version. Feel free to comment below or contact me [on Twitter](https://twitter.com/sixhobbits) if you have any questions or comments, or simply want to share what you made using this as a starting point. You can also join [the Repl Discord server](https://discord.gg/QWFfGhy) where there is a community of developers and makers who are happy to help out and discuss ideas. Finally, you might enjoy [my other tutorials](https://dwyer.co.za/writing.html).
+If you'd like to keep working on the web application, simply head over to [the repl](https://repl.it/@GarethDwyer1/news-to-wordcloud) and fork it to continue your own version. 
 
 
