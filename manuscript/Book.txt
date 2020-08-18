@@ -1,12 +1,19 @@
-introduction.md
-beginner-web-scraping-with-python-and-repl-it.md
-building-news-word-clouds-using-python-and-repl-it.md
-building-a-discord-bot-with-python-and-repl-it.md
-building-a-discord-bot-with-node-and-repl-it.md
-and similarities.md
-creating-and-hosting-a-basic-django-application-with-django-and-repl-it.md
-building-a-crm-app-with-nodejs-repl-it-and-mongo-db.md
-Customer Relationship Manager.md
-introduction-to-machine-learning-with-python-and-repl-it.md
-text classification.md
-quicksort-tutorial-python-implementation-with-line-by-line-explanation.md
+00-overview.md
+01-introduction-to-the-repl-it-ide.md
+02-managing-files-using-repl-it.md
+03-handling-dependencies-with-repl-it.md
+04-data-science-and-visualisation-with-repl-it.md
+05-pair-programming-using-multiplayer-with-repl-it.md
+06-github-and-run-button.md
+07-building-a-game-with-pygame.md
+08-storing-secrets-and-history.md
+09-test-driven-development.md
+10-productivity-hacks.md
+11-beginner-web-scraping-with-python-and-repl-it.md
+12-building-news-word-clouds-using-python-and-repl-it.md
+13-building-a-discord-bot-with-python-and-repl-it.md
+14-building-a-discord-bot-with-node-and-repl-it.md
+15-creating-and-hosting-a-basic-django-application-with-django-and-repl-it.md
+16-building-a-crm-app-with-nodejs-repl-it-and-mongo-db.md
+17-introduction-to-machine-learning-with-python-and-repl-it.md
+18-quicksort-tutorial-python-implementation-with-line-by-line-explanation.md

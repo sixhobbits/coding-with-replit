@@ -348,8 +348,6 @@ You could then integrate some basic marketing automation with a page allowing yo
 
 You could also add fields to keep track of customer purchasing information so that you can see which products do well with which customers.
 
-If you want to start from where this tutorial leaves off, simply fork the Repl at [https://repl.it/@GarethDwyer1/nodejs-crm](https://repl.it/@GarethDwyer1/nodejs-crm).
-To get additional guidance from the Repl community, also join Repl's Discord server by using this invite link [https://discord.gg/QWFfGhy](https://discord.gg/QWFfGhy).
+If you want to start from where this tutorial leaves off, fork the Repl at [https://repl.it/@GarethDwyer1/nodejs-crm](https://repl.it/@GarethDwyer1/nodejs-crm).
 
-_This article was contributed by Gerrit Vermeulen and edited by Katherine James._
 

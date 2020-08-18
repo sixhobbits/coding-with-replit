@@ -215,7 +215,7 @@ This is not a very useful bot as is, but the possibilities are only limited by y
 
 If you followed along this tutorial, you'll have your own basic Repl bot to play around with and extend. If you were simply reading, you can fork my bot at [https://repl.it/@GarethDwyer1/discord-bot](https://repl.it/@GarethDwyer1/discord-bot) and extend it how you want (you'll need to add your own token and recreate the `.env` file still). Happy hacking!
 
-If you're stuck for ideas, why not link up your Discord bot to the [Twitch API](https://dev.twitch.tv/) to get notified when your favourite streamers are online, or build a [text adventure](https://en.wikipedia.org/wiki/Interactive_fiction). Also join Repl's Discord server by using this invite link [https://discord.gg/QWFfGhy](https://discord.gg/QWFfGhy) - you can test your bot, share it with other bot builders to get feedback, and see what Discord bots people are building on Repl.
+If you're stuck for ideas, why not link up your Discord bot to the [Twitch API](https://dev.twitch.tv/) to get notified when your favourite streamers are online, or build a [text adventure](https://en.wikipedia.org/wiki/Interactive_fiction).
 
 In the next chapter, we'll build exactly the same bot again but using NodeJS instead of Python. Even if you prefer Python, it's often a good idea to build the same project in two languages so that you can better appreciate the differences and similarities.
 

@@ -272,8 +272,6 @@ Try the code on bigger datasets to see how it performs. There is no shortage of 
 
 You can fork this repl here: [https://repl.it/@GarethDwyer1/machine-learning-intro](https://repl.it/@GarethDwyer1/machine-learning-intro) to keep hacking on it (it's the same code as we walked through above but with some comments added.) If you prefer, the entire program is shown below so you can copy paste it and work from there.
 
-If you want to try your hand at machine learning, join the [repl.it AI competition](https://repl.it/talk/challenge/AI/10058) that is running until 11 February. You can get general help by joining the Repl [discord channel](https://discord.gg/QWFfGhy), or if you have questions specifically about this tutorial feel free to leave a comment below or to [tweet at me](https://twitter.com/sixhobbits). 
-
 ```python
 from sklearn import tree
 from sklearn.feature_extraction.text import CountVectorizer

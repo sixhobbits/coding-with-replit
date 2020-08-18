@@ -2,10 +2,9 @@
 
 In this tutorial, we'll use [repl.it](https://repl.it) and Node.js to build a Discord Chatbot. The bot will be able to join a Discord server and respond to messages sent by people. 
 
-If you don't like JavaScript, there's also a [Python version of this tutorial](https://www.codementor.io/garethdwyer/building-a-discord-bot-with-python-and-repl-it-miblcwejz). 
+If you don't like JavaScript, there's also a Python version of this tutorial in the previous chapter.
 
 You'll find it easier to follow along if you have some JavaScript knowledge and you should have used Discord or a similar app such as Skype or Telegram before. We won't be covering the very basics of Node.js, but we will explain each line of code in detail, so if you have any experience with programming, you should be able to follow along.
-
 
 ## Setting up
 We'll be doing all of our coding through the Repl.it web IDE and hosting our bot with Repl.it as well, so you won't need to install any additional software on your machine.
@@ -59,7 +58,6 @@ The last thing we'll need from our bot is a Token. Anyone who has the bot's Toke
 
 Take note of your Token or copy it to your clipboard, as we'll need to add it to our code soon.
 
-
 ### Creating a Discord server
 If you don't have a Discord server to add your bot to, you can create one by opening the desktop Discord application that you downloaded earlier. Press the "+" icon as shown below to create a server.
 ![Creating a discord server](https://i.imgur.com/jf5yLjh.png)
@@ -83,7 +81,6 @@ Visit the URL that you created in your web browser and you'll see a page similar
 After pressing "authorize", you should get an in-app Discord notification telling you that your bot has joined your server.
 
 Now we can get to the fun part of building a brain for our bot!
-
 
 ## Creating a Repl and installing our Discord dependencies
 The first thing we need to do is create a Node.js Repl to write the code for our Discord bot. Over at [repl.it](https://repl.it), create a new Repl, as you did right at the start of this tutorial, choosing "Node.js" as your language again. 
@@ -201,13 +198,10 @@ After doing this and hitting the green "Run" button again, you should see some c
 
 Now your bot will stay alive even after closing your browser or shutting down your development machine. Repl will still clean up your server and kill your bot after about one hour of inactivity, so if you don't use your bot for a while, you'll have to log into Repl and start the bot up again. Alternatively, you can set up a third-party (free!) service like [Uptime Robot](https://uptimerobot.com/). Uptime Robot pings your site every 5 minutes to make sure it's still working -- usually to notify you of unexpected downtime, but in this case the constant pings have the side effect of keeping our Repl alive as it will never go more than an hour without receiving any activity. Note that you need to select the HTTP option instead of the Ping option when setting up Uptime Robot as repl.it requires regular HTTP requests to keep your chatbot alive.
 
-
 ## Forking and extending our basic bot
 This is not a very useful bot as is, but the possibilities are only limited by your creativity now! You can have your bot receive input from a user, process the input, and respond in any way you choose. In fact, with the basic input and output that we've demonstrated, we have most of the components of any modern computer, all of which are based on the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (we could easily add the missing memory by having our bot write to a file, or with a bit more effort link in a [SQLite database](https://www.sqlite.org/index.html) for persistent storage).
 
 If you followed along this tutorial, you'll have your own basic Repl bot to play around with and extend. If you were simply reading, you can easily fork my bot at [https://repl.it/@GarethDwyer1/discord-bot-node](https://repl.it/@GarethDwyer1/discord-bot-node) and extend it how you want (you'll need to add your own token and recreate the `.env` file still). Happy hacking!
 
-If you're stuck for ideas, why not link up your Discord bot to the [Twitch API](https://dev.twitch.tv/) to get notified when your favourite streamers are online, or build a [text adventure](https://en.wikipedia.org/wiki/Interactive_fiction). Also join Repl's Discord server by using this invite link [https://discord.gg/QWFfGhy](https://discord.gg/QWFfGhy) - you can test your bot, share it with other bot builders to get feedback, and see what Discord bots people are building on Repl.
-
-If you enjoyed this tutorial, you might also enjoy my tutorial on [building a chatbot for Telegram](https://www.codementor.io/garethdwyer/building-a-telegram-bot-using-python-part-1-goi5fncay) or my book [Flask by Example](https://www.packtpub.com/web-development/flask-example) where I show how to build Python applications using the Flask framework. If you have any questions or comments about this tutorial, feel free to [reach out on Twitter](https://twitter.com/sixhobbits). 
+If you're stuck for ideas, why not link up your Discord bot to the [Twitch API](https://dev.twitch.tv/) to get notified when your favourite streamers are online, or build a [text adventure](https://en.wikipedia.org/wiki/Interactive_fiction). 
 

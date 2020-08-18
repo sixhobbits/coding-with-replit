@@ -191,8 +191,8 @@ print("Sorted list of size {} in {}".format(len(xs), t2 - t1))
 print(xs[:10], xs[-10:])
 ```
 
-If you want to try this code out, visit my Repl at [https://repl.it/@GarethDwyer1/quicksort](https://repl.it/@GarethDwyer1/quicksort?language=python3). You'll be able to run the code, see the results, and even fork it to continue developing or testing it on your own. 
+If you want to try this code out, visit the Repl at [https://repl.it/@GarethDwyer1/quicksort](https://repl.it/@GarethDwyer1/quicksort?language=python3). You'll be able to run the code, see the results, and even fork it to continue developing or testing it on your own. 
 
-Also have a look at [https://repl.it/@GarethDwyer1/sorting](https://repl.it/@GarethDwyer1/sorting) where I show how Quicksort compares to some other common sorting algorithms.
+Also have a look at [https://repl.it/@GarethDwyer1/sorting](https://repl.it/@GarethDwyer1/sorting) where we show how Quicksort compares to some other common sorting algorithms.
 
-If you need help, the folk over at the [Repl discord server](https://discordapp.com/invite/QWFfGhy) are very friendly and keen to help people learn. Also feel free to drop a comment below, or to [follow me on Twitter](https://twitter.com/sixhobbits) and ask me questions there.
+If you need help, the folk over at the [Repl discord server](https://repl.it/discord) are very friendly and keen to help people learn. 
