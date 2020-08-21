@@ -19,13 +19,17 @@ Let's get through these admin steps first and then we can get to the fun part of
 ### Creating a bot in Discord and getting a token
  You can sign up for a free account over at [the Discord register page](https://discordapp.com/register), and download one of their desktop or mobile applications from [the Discord homepage](https://discordapp.com/).
 
-Once you have an account, you'll want to create a Discord application. Visit [the Discord developer's page](https://discordapp.com/developers/applications/) and press the "Create new application" button, as in the image below. (Note, that if you haven't created applications before, you'll only see the button that marked in red and not the two above it.)
+Once you have an account, you'll want to create a Discord application. Visit [the Discord developer's page](https://discordapp.com/developers/applications/) and press the "New application" button, as in the image below. 
 
 ![Creating a new Discord application](./resources/discord_newapplication.png)
 
-The first thing to do on the next page is to note your Client ID, which you'll need to add the bot to the server. You can come back later and get if from this page, or copy it somewhere where you can easily find it later.
+Fill out a name for your bot and select "Create".
 
-Fill out a name and description for your bot (feel free to be more creative than me) and press "save changes".
+The first thing to do on the next page is to note your Client ID, which you'll need to add the bot to the server. You can come back later and get it from this page, or copy it somewhere where you can easily find it later.
+
+![Record your Client ID](./resources/discord_client_id.png)
+
+You can also rename the application and provide a description for your bot at this point and press "save changes".
 
 ![Naming our Discord Application](https://i.imgur.com/yznoduG.png)
 
