@@ -66,7 +66,7 @@ Now we can get to the fun part of building a brain for our bot!
 
 
 ## Creating a Repl and installing our Discord dependencies
-The first thing we need to do is create a Python Repl to write the code for our Discord bot. Over at [Repl.it](https://repl.it), create a new Repl, as you did right at the start of this tutorial, choosing "Python" as your language again.
+The first thing we need to do is create a Python Repl to write the code for our Discord bot. Over at [Repl.it](https://repl.it), create a new Repl, choosing "Python" as your language.
 
 We don't need to reinvent the wheel, as there is already a great Python wrapper for the Discord bot API over on [GitHub](https://github.com/Rapptz/discord.py), which makes it a lot faster to get set up with a basic Python discord bot. To use library, we can simply write `import discord` at the top of `main.py`. Repl will handle installing this dependency when you press the "run" button. 
 

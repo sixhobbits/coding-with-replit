@@ -1,89 +1,70 @@
 # Building a Discord bot with Node.js and Repl.it
-
-In this tutorial, we'll use [repl.it](https://repl.it) and Node.js to build a Discord Chatbot. The bot will be able to join a Discord server and respond to messages sent by people. 
+In this tutorial, we'll use [Repl.it](https://repl.it) and Node.js to build a Discord Chatbot. If you're reading this tutorial, you probably have at least heard of Discord and likely have an existing account. If not, Discord is a VoIP and Chat application that is designed to replace Skype for gamers. The bot we create in this tutorial will be able to join a Discord server and respond to messages sent by people. 
 
 If you don't like JavaScript, there's also a Python version of this tutorial in the previous chapter.
 
-You'll find it easier to follow along if you have some JavaScript knowledge and you should have used Discord or a similar app such as Skype or Telegram before. We won't be covering the very basics of Node.js, but we will explain each line of code in detail, so if you have any experience with programming, you should be able to follow along.
+You'll find it easier to follow along if you have some JavaScript knowledge and have used Discord or a similar app such as Skype or Telegram before. We won't be covering the very basics of JavaScript, but we will explain each line of code in detail, so if you have any experience with programming, you should be able to follow along.
 
-## Setting up
-We'll be doing all of our coding through the Repl.it web IDE and hosting our bot with Repl.it as well, so you won't need to install any additional software on your machine.
+## Overview and requirements
+We'll be doing all of our coding through the Repl.it web IDE and hosting our bot with Repl.it as well, so you won't need to install any additional software on your machine. For this tutorial you will need to create a [Discord](https://discordapp.com/) account (if you already have one, you can skip this). There are instructions for how to do this in the next section.
 
-For set up, we'll be walking through the following steps. Skip any that don't apply to you (e.g. if you already have a Discord account, you can skip that section).
-
-* Creating an account on [Repl.it](https://repl.it).
-* Creating an account on [Discord](https://discordapp.com/).
+In this tutorial, we will be covering:
 * Creating an application and a bot user in your Discord account
 * Creating a server on Discord
 * Adding our bot to our Discord server
 
 Let's get through these admin steps first and then we can get to the fun part of coding our bot.
 
-### Creating an account on Repl.it
-Repl.it is an online IDE *and* compute provider. Traditionally, you would write code locally on your machine, and then have to "deploy" the code to a server, so that other people on the internet could interact with it. Repl.it removes one of these steps by combining the two -- you can write your code directly through the Repl.it interface and it will automatically be deployed to the public internet. 
-
-Visit [Repl.it](https://repl.it) in your web browser and hit the "Sign up" button. 
-
-![Repl.it sign up button](https://i.imgur.com/mc9Jzm7.png)
-**Image 1: Signing up for Repl**
-
-After signing up, press "Start coding now" and choose "Node.js" from the list of available languages.
-
-Play around with the interface a bit to see how easy it is to write and run code. We'll be coming back to this interface soon after we've done some of the Discord set up.
-
 ### Creating a bot in Discord and getting a token
-If you're reading this tutorial, you probably have at least heard of Discord and likely have an existing account. If not, Discord is a VoIP and Chat application that is designed to replace Skype for gamers. You can sign up for a free account over at [the Discord register page](https://discordapp.com/register), and download one of their desktop or mobile applications from [the Discord homepage](https://discordapp.com/). 
+ You can sign up for a free account over at [the Discord register page](https://discordapp.com/register), and can download one of their desktop or mobile applications from [the Discord homepage](https://discordapp.com/). You can also use Discord in the browser.
 
-Once you have an account, you'll want to create a Discord application. Visit [the Discord developer's page](https://discordapp.com/developers/applications/) and press the "Create new application" button, as in the image below. (I've already created two applications. If you haven't, you'll only see the button that I've marked in red and not the two above it.)
+Once you have an account, you'll want to create a Discord application. Visit [the Discord developer's page](https://discordapp.com/developers/applications/) and press the "New application" button, as in the image below. 
 
-![Discord create application page](https://i.imgur.com/HHzbjJL.png)
-**Image 2: Creating a new Discord application**
+![Creating a new Discord application](./resources/discord_newapplication.png)
 
-The first thing to do on the next page is to note your Client ID, which you'll need to add the bot to the server. You can come back later and get if from this page, or copy it somewhere where you can easily find it later.
+Fill out a name for your bot and select "Create".
 
-Fill out a name and description for your bot (feel free to be more creative than me) and press "save changes".
+The first thing to do on the next page is to note your Client ID, which you'll need to add the bot to the server. You can come back later and get it from this page, or copy it somewhere where you can easily find it later.
 
-![Naming our Discord bot](https://i.imgur.com/yznoduG.png)
-**Image 3: Naming our Discord Application**
+![Record your Client ID](./resources/discord_client_id.png)
 
-Now you've created a Discord application. The next step is to add a bot to this application, so head over to the "Bot" tab using the menu on the left and press the "Add Bot" button, as indicated below. Click "yes, do it" when Discord asks if you're sure about bringing a new bot to life.
+You can also rename the application and provide a description for your bot at this point and press "Save Changes".
 
-![Adding a bot to our Discord application](https://i.imgur.com/aFN3Lr0.png)
-**Image 4: Adding a bot to our Discord Application**
+You have now created a Discord application. The next step is to add a bot to this application, so head over to the "Bot" tab using the menu on the left and press the "Add Bot" button, as indicated below. Click "Yes, do it" when Discord asks if you're sure about bringing a new bot to life.
 
-The last thing we'll need from our bot is a Token. Anyone who has the bot's Token can prove that they own the bot, so you'll need to be careful not to share this with anyone. You can get the token by pressing "Click to reveal token", or copy it to your clipboard without seeing it by pressing "Copy". 
+![Adding a bot to our Discord Application](./resources/discord_addbot.png)
 
-![Getting a Token for your bot](https://i.imgur.com/zZ1ctsg.png)
-**Image 5: Generating a token for our Discord bot**
+The last thing we'll need from our bot is a Token. Anyone who has the bot's token can prove that they own the bot, so you'll need to be careful not to share this with anyone. You can get the token by pressing "Click to Reveal Token", or copy it to your clipboard without seeing it by pressing "Copy".
 
-Take note of your Token or copy it to your clipboard, as we'll need to add it to our code soon.
+![Generating a token for our Discord bot](./resources/discord_bottoken.png)
+
+Take note of your token or copy it to your clipboard, as we'll need to add it to our code soon.
+
 
 ### Creating a Discord server
-If you don't have a Discord server to add your bot to, you can create one by opening the desktop Discord application that you downloaded earlier. Press the "+" icon as shown below to create a server.
-![Creating a discord server](https://i.imgur.com/jf5yLjh.png)
-**Image 6: Creating a Discord server**
+If you don't have a Discord server to add your bot to, you can create one by either opening the desktop Discord application that you downloaded earlier or returning to the Discord home page in your browser. Press the "+" icon indicated by the exclamation mark, as shown below, to create a server.
 
-Press "Create a server" in the screen that follows, and then give your server a name. Once the server is up and running, you can chat to yourself, or invite some friends to chat with you. Soon we'll invite our bot to chat with us as well. 
+![Creating a Discord server](resources/discord_addserver.png)
+
+Press "Create a server" in the screen that follows, and then give your server a name. Once the server is up and running, you can chat with yourself, or invite some friends to chat with you. Soon we'll invite our bot to chat with us as well.
 
 ### Adding your Discord bot to your Discord server
-Our Discord bot is still just a shell at this stage as we haven't written any code to allow him to do anything, but let's go ahead and add him to our Discord server anyway. To add a bot to your server, you'll need the Client ID from the "General Information" page that we looked at before (this is the one outlined in green in Image 3, **not** the Bot Secret from Image 5).
+Our Discord bot is still just a shell at this stage as we haven't written any code to allow him to do anything, but let's go ahead and add him to our Discord server anyway. To add a bot to your server, you'll need the Client ID from the "General Information" page that we looked at before when we created our ReplBotApplication (ie. the client ID, not the secret bot Token).
 
 Create a URL that looks as follows, but using your Client ID instead of mine at the end:
 
-https://discordapp.com/api/oauth2/authorize?scope=bot&client_id=477366174959665152. 
+https://discordapp.com/api/oauth2/authorize?scope=bot&client_id=746269162917331028
 
 Visit the URL that you created in your web browser and you'll see a page similar to the following where you can choose which server to add your bot to.
 
-![Authorizing your bot to join your server](https://i.imgur.com/t0nlSKC.png)
-**Image 7: Authorizing our bot to join our server**
+![Authorizing our bot to join our server](resources\discord_addbottoserver.png)
 
-
-After pressing "authorize", you should get an in-app Discord notification telling you that your bot has joined your server.
+Select the server we created in the step before this and hit the "authorize" button. After completing the captcha, you should get an in-app Discord notification telling you that your bot has joined your server.
 
 Now we can get to the fun part of building a brain for our bot!
 
 ## Creating a Repl and installing our Discord dependencies
-The first thing we need to do is create a Node.js Repl to write the code for our Discord bot. Over at [repl.it](https://repl.it), create a new Repl, as you did right at the start of this tutorial, choosing "Node.js" as your language again. 
+The first thing we need to do is create a Node.js Repl to write the code for our Discord bot. Over at [Repl.it](https://repl.it), create a new Repl, choosing "Node.js" as your language.
 
 We don't need to reinvent the wheel as there is already a great Node wrapper for the Discord bot API called [discord.js](https://discord.js.org/). Normally we would install this third-party library through [npm](https://www.npmjs.com/), but because we're using Repl.it, we can skip the installation. Our Repl will automatically pull in all dependencies. 
 
@@ -103,7 +84,9 @@ Our bot is nearly ready to go -- but we still need to plug in our secret token. 
 ## Setting up authorization for our bot
 By default, Repl code is public. This is great as it encourages collaboration and learning, but we need to be careful not to share our secret bot token (which gives anyone who has access to it full control of our bot). 
 
-To get around the problem of needing to give our *code* access to the token while allowing others to access our code but *not* our token, we'll be using [environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps). On a normal machine, we'd set these directly on our operating system, but using Repl we don't have access to this. Repl allows us to set secrets in environment variables through a special `.env` file. Create a new file called exactly `.env` by using the new file button in the left pane and add a variable to define your Bot's secret token (note that this is the second token that we got while setting up the Bot -- different from the Client ID that we used to add our bot to our server). It should looks something like:
+To get around the problem of needing to give our *code* access to the token while allowing others to access our code but *not* our token, we'll be using [environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps). On a normal machine, we'd set these directly on our operating system, but using Repl we don't have access to this. Repl allows us to set secrets in environment variables through a special `.env` file. 
+
+First, we need to create a new file called exactly `.env`. Select "Add file" and name this file `.env`. It is important not to leave out the `.` at the beginning. Open this new file and add a variable to define your bot's secret token (note that this is the second token that we got while setting up the bot -- different from the Client ID that we used to add our bot to our server). It should look something like:
 
 ```bash
 DISCORD_BOT_SECRET=NDcUN5T32zcTjMYOM0Y1MTUy.Dk7JBw.ihrTSAO1GKHZSonqvuhtwta16WU
@@ -111,18 +94,15 @@ DISCORD_BOT_SECRET=NDcUN5T32zcTjMYOM0Y1MTUy.Dk7JBw.ihrTSAO1GKHZSonqvuhtwta16WU
 
 You'll need to:
 * **Replace** the token below (after the `=` sign) with the token that Discord gave you when creating your own bot.
-* Be careful about **spacing**. Unlike in Python, if you put a space on either side of the `=` in your `.env` file, these spaces will be part of the variable name or the value, so make sure you don't have any spaces around the `=` or at the end of the line.
+* Be careful about **spacing**. If you put a space on either side of the `=` in your `.env` file, these spaces will be part of the variable name or the value, so make sure you don't have any spaces around the `=` or at the end of the line.
 * Run the code again. Sometimes you'll need to refresh the whole page to make sure that your environment variables are successfully loaded.
 
-```bash
-DISCORD_BOT_SECRET=NDcUN5T32zcTjMYOM0Y1MTUy.Dk7JBw.ihrTSAO1GKHZSonqvuhtwta16WU
-```
-In the image below you we've highlighted the "Add file" button, the new file (`.env`) and how to deine the secret token for our bot's use.
+In the image below you we've highlighted the "Add file" button, the new file (`.env`) and how to define the secret token for our bot's use.
 
-![Creating our .env file](https://i.imgur.com/Io372eV.png)
+![Creating our .env file](./resources/09_repl_nodejs_env.png)
 **Image 9: Creating our .env file**
 
-Let's make a slightly Discord bot that repeats everything we say but in reverse. We can do this in only a few lines of code. In your `index.js` file, add the following:
+Let's make a Discord bot that repeats everything we say but in reverse. We can do this in only a few lines of code. In your `index.js` file, add the following:
 
 
 ```javascript
@@ -161,10 +141,17 @@ Press the big green "Run" button again and you should see your bot reporting a s
 ![Repl output showing channel join](https://i.imgur.com/DnSvWvY.png)
 **Image 10: Seeing our bot join our server**
 
-Over in your Discord app, send a message and see your Bot respond!
+Open Discord, and from within the server we created earlier, select your ReplBotApplication from the pane on the right-hand side of the screen.
 
-![Messages from our bot](https://i.imgur.com/Wu1ZU6F.png)
-**Image 11: Our bot can talk!**
+![The Repl bot is active](./resources/repl_bot_active.png).
+
+Once you have selected this, you will be able to send a message (by typing into the box highlighted below) and see your bot respond!
+
+![Send a message to your bot](./resources/message_repl_bot.png).
+
+The bot responds each time, reversing the text we enter.
+
+![Our bot can talk!](https://i.imgur.com/Wu1ZU6F.png).
 
 
 ## Keeping our bot alive
@@ -196,7 +183,7 @@ After doing this and hitting the green "Run" button again, you should see some c
 **Image 12** Output from our Node server
 
 
-Now your bot will stay alive even after closing your browser or shutting down your development machine. Repl will still clean up your server and kill your bot after about one hour of inactivity, so if you don't use your bot for a while, you'll have to log into Repl and start the bot up again. Alternatively, you can set up a third-party (free!) service like [Uptime Robot](https://uptimerobot.com/). Uptime Robot pings your site every 5 minutes to make sure it's still working -- usually to notify you of unexpected downtime, but in this case the constant pings have the side effect of keeping our Repl alive as it will never go more than an hour without receiving any activity. Note that you need to select the HTTP option instead of the Ping option when setting up Uptime Robot as repl.it requires regular HTTP requests to keep your chatbot alive.
+Now your bot will stay alive even after closing your browser or shutting down your development machine. Repl will still clean up your server and kill your bot after about one hour of inactivity, so if you don't use your bot for a while, you'll have to log into Repl and start the bot up again. Alternatively, you can set up a third-party (free!) service like [Uptime Robot](https://uptimerobot.com/). Uptime Robot pings your site every 5 minutes to make sure it's still working -- usually to notify you of unexpected downtime, but in this case the constant pings have the side effect of keeping our Repl alive as it will never go more than an hour without receiving any activity. Note that you need to select the HTTP option instead of the Ping option when setting up Uptime Robot as Repl.it requires regular HTTP requests to keep your chatbot alive.
 
 ## Forking and extending our basic bot
 This is not a very useful bot as is, but the possibilities are only limited by your creativity now! You can have your bot receive input from a user, process the input, and respond in any way you choose. In fact, with the basic input and output that we've demonstrated, we have most of the components of any modern computer, all of which are based on the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (we could easily add the missing memory by having our bot write to a file, or with a bit more effort link in a [SQLite database](https://www.sqlite.org/index.html) for persistent storage).
