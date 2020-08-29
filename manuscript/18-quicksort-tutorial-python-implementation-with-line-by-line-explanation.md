@@ -1,10 +1,13 @@
 # Quicksort tutorial: Python implementation with line by line explanation
 
-In this tutorial, we'll be going over the [Quicksort](https://en.wikipedia.org/wiki/Quicksort) algorithm with a line-by-line explanation. We're going to assume that you already know at least something about [sorting algorithms](https://en.wikipedia.org/wiki/Sorting_algorithm), and have been introduced to the idea of Quicksort, but understandably you find it a bit confusing and are trying to better understand how it works.
+In this tutorial, we'll be going over the [Quicksort](https://en.wikipedia.org/wiki/Quicksort) algorithm with a line-by-line explanation. We'll go through how the algorithm works, build it in Repl.it and then time it to see how efficient it is.
+
+## Overview and requirements
+ We're going to assume that you already know at least something about [sorting algorithms](https://en.wikipedia.org/wiki/Sorting_algorithm), and have been introduced to the idea of Quicksort. By the end of this tutorial, you should have a better understanding of how it works.
 
 We're also going to assume that you've covered some more fundamental computer science concepts, especially [recursion](https://en.wikipedia.org/wiki/Recursion#In_computer_science), which Quicksort relies on.
 
-To recap, Quicksort is one of the most efficient and most commonly used algorithms to sort a list of numbers. Unlike its competitor Mergesort, Quicksort can sort a list in place, saving the need to create a copy of the list, and therefore saving on memory requirements. 
+To recap, Quicksort is one of the most efficient and most commonly used algorithms to sort a list of numbers. Unlike its competitor, Mergesort, Quicksort can sort a list in place, without the need to create a copy of the list, and therefore saving on memory requirements. 
 
 The main intuition behind Quicksort is that if we can efficiently *partition* a list, then we can efficiently sort it. Partitioning a list means that we pick a *pivot* item in the list, and then modify the list to move all items larger than the pivot to the right and all smaller items to the left. 
 
@@ -75,7 +78,7 @@ def bad_partition(xs):
 
 In this implementation, we set up two temporary lists (`smaller` and `larger`). We then take the `pivot` element as the last element of the list (`pop` takes the last element and removes it from the original `xs` list). 
 
-We then consider each element `x` in the list `xs`. The ones that are smaller than are partition we store in the `smaller` temporary list, and the others go to the `larger` temporary list. Finally, we combine the two lists with the pivot item in the middle, and we have partitioned our list.
+We then consider each element `x` in the list `xs`. The ones that are smaller than the pivot, we store in the `smaller` temporary list, and the others go to the `larger` temporary list. Finally, we combine the two lists with the pivot item in the middle, and we have partitioned our list.
 
 This is much easier to read than the implementation at the start of this post, so why don't we do it like this? 
 
@@ -109,7 +112,7 @@ The `leader` is just a loop counter. Every iteration it increments by one until 
 
 The other confusing part of this algorithm is on line 4. We move through the list from left to right. All numbers are currently to the *left* of the pivot but we eventually want the "big" items to end up on the *right*. 
 
-Intuitively then you would expect us to do the swapping action when we find an item that is *larger* than the pivot, but in fact, we do the opposite. When we find items that are *smaller* than the pivot, we swap the leader and the follower. 
+Intuitively, you would then expect us to do the swapping action when we find an item that is *larger* than the pivot, but in fact, we do the opposite. When we find items that are *smaller* than the pivot, we swap the leader and the follower. 
 
 You can think of this as pushing the small items further to the left. Because the leader is always ahead of the follower, when we do a swap, we are swapping a small element with one further left in the list. The follower only looks at "big" items (ones that the leader has passed over without action), so when we do the swap, we're swapping a small item (leader) with a big one (follower), meaning that small items will move towards the left and large ones towards the right. 
 
@@ -169,7 +172,24 @@ Now we, as users of the sorting function, can call `quicksort([4,5,6,2,3,9,10,2,
 
 ## Testing our algorithm
 
-We can write some basic driver code to take our newly implemented Quicksort out for a spin. The code below generates a random list of 100 000 numbers and sorts this list in around 5 seconds.
+
+We can write some basic driver code to take our newly implemented Quicksort out for a spin. Create a new Python Repl and add the following code to `main.py`. Then insert the code listed at the beginning of this tutorial after the imports.
+
+```python
+from datetime import datetime
+import random
+
+# create 100000 random numbers between 1 and 1000 
+xs = [random.randrange(1000) for _ in range(10)]
+
+# look at the first few and last few
+print(xs[:10])
+#apply the algorithm
+quicksort(xs)
+# have a look at the results
+print(xs[:10])
+```
+If you run this code, you will see the sorted list. This does what we expect, but it doesn't tell us about how efficient Quicksort is - so let's take a closer look. Replace the code in `main.py` with the following, and again add the code listed at the beginning of this tutorial after the imports.
 
 ```python
 from datetime import datetime
@@ -190,9 +210,14 @@ print("Sorted list of size {} in {}".format(len(xs), t2 - t1))
 # have a look at the results
 print(xs[:10], xs[-10:])
 ```
+The code generates a random list of 100 000 numbers and sorts this list in around 5 seconds. You can compare the performance of Quicksort to some other common sorting algorithms using [this Repl](https://repl.it/@GarethDwyer1/sorting).
 
-If you want to try this code out, visit the Repl at [https://repl.it/@GarethDwyer1/quicksort](https://repl.it/@GarethDwyer1/quicksort?language=python3). You'll be able to run the code, see the results, and even fork it to continue developing or testing it on your own. 
-
-Also have a look at [https://repl.it/@GarethDwyer1/sorting](https://repl.it/@GarethDwyer1/sorting) where we show how Quicksort compares to some other common sorting algorithms.
+If you want to try the code from the tutorial out, visit the Repl at [https://repl.it/@GarethDwyer1/quicksort](https://repl.it/@GarethDwyer1/quicksort?language=python3). You'll be able to run the code, see the results, and even fork it to continue developing or testing it on your own. 
 
 If you need help, the folk over at the [Repl discord server](https://repl.it/discord) are very friendly and keen to help people learn. 
+
+---
+
+# Closing note
+
+We have now come to the end of the series of tutorials. You have learnt the basics of the Repl.it IDE, worked with more advanced features and gone through a number of practical projects. This doesn't mean the end of fun projects, for you should now be equipped to tackle your own projects, which you can start from scratch or use the code from the tutorials as a basis. 
