@@ -100,7 +100,7 @@ Now modify your game loop to include a call to the new `update()` method. The lo
 
 The `(0, 1)` tuple causes the ball to move its Y coordinate by 1 each loop and keep a constant X coordinate. This has the effect of making the ball drop slowly down the screen. Run your code again to check that this works.
 
-![**Image 4: **The ball falling at a constant rate.*](https://codewithrepl.it/img/07-falling-ball.gif)
+![**Image 4:** *The ball falling at a constant rate.*](https://codewithrepl.it/img/07-falling-ball.gif)
 
 When the ball gets to the bottom of the screen, it'll just keep falling but that's OK for now. Let's see how we can add click detection.
 
