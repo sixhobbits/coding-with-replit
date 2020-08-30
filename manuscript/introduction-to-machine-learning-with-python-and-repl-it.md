@@ -4,11 +4,16 @@ In this tutorial, we're going to walk through how to set up a basic Python [Repl
 
 The maths, specifically calculus and linear algebra, behind machine learning gets a bit hairy. We'll be abstracting this away with the Python library [scikit-learn](https://scikit-learn.org/), which makes it possible to do advanced machine learning in a few lines of Python.
 
-At the end of this tutorial you'll understand the fundamental ideas of automatic classification and have a program that can learn by itself to distinguish between different categories of text. You'll be able to use the same code to learn new categories (e.g. spam/not-spam, or clickbait/non-clickbait).
+At the end of this tutorial, you'll understand the fundamental ideas of automatic classification and have a program that can learn by itself to distinguish between different categories of text. You'll be able to use the same code to learn new categories (e.g. spam/not-spam, or clickbait/non-clickbait).
 
-## Prerequisites
+## Overview and requirements
+To follow along with this tutorial, you should have at least basic knowledge of Python or a similar programming language. Ideally, you should also sign up for a [Repl.it](https://repl.it) account so that you can modify and extend the bot we build, but it's not completely necessary.
 
-To follow along this tutorial, you should have at least basic knowledge of Python or a similar programming language. Ideally, you should also sign up for a [Repl.it](https://repl.it) account so that you can modify and extend the bot we build, but it's not completely necessary.
+In this tutorial, we will:
+* Create some simple mock data - text to classify as positive or negative
+* Explain vectorisation of the dataset
+* Cover how to classify text using a machine learning classifier
+* Compare this to a manual classifier
 
 ## Setting up
 

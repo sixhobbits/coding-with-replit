@@ -64,7 +64,7 @@ Select the server we created in the step before this and hit the "authorize" but
 Now we can get to the fun part of building a brain for our bot!
 
 ## Creating a Repl and installing our Discord dependencies
-The first thing we need to do is create a Node.js Repl to write the code for our Discord bot. Over at [Repl.it](https://repl.it), create a new Repl, choosing "Node.js" as your language.
+The first thing we need to do is create a Node.js Repl to write the code for our Discord bot. Over at [repl.it](https://repl.it), create a new Repl, choosing "Node.js" as your language.
 
 We don't need to reinvent the wheel as there is already a great Node wrapper for the Discord bot API called [discord.js](https://discord.js.org/). Normally we would install this third-party library through [npm](https://www.npmjs.com/), but because we're using Repl.it, we can skip the installation. Our Repl will automatically pull in all dependencies. 
 
@@ -73,10 +73,10 @@ In the default `index.js` file that is included with your new Repl, add the foll
 ```javascript
 const Discord = require('discord.js');
 ```
-Press the "Run" button and you should see Repl installing the Discord library in the output pane on the right, as in the image below.
+Press the "Run" button and you should see Repl.it installing the Discord library in the output pane on the right, as in the image below.
 
-![installing Discord.js](https://i.imgur.com/7EexEVk.png)
-**Image 8:** Installing Discord.js in our Repl.
+![Installing Discord.js in our Repl](https://i.imgur.com/7EexEVk.png)
+
 
 Our bot is nearly ready to go -- but we still need to plug in our secret token. This will authorize our code to control our bot.
 
@@ -84,7 +84,7 @@ Our bot is nearly ready to go -- but we still need to plug in our secret token. 
 ## Setting up authorization for our bot
 By default, Repl code is public. This is great as it encourages collaboration and learning, but we need to be careful not to share our secret bot token (which gives anyone who has access to it full control of our bot). 
 
-To get around the problem of needing to give our *code* access to the token while allowing others to access our code but *not* our token, we'll be using [environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps). On a normal machine, we'd set these directly on our operating system, but using Repl we don't have access to this. Repl allows us to set secrets in environment variables through a special `.env` file. 
+To get around the problem of needing to give our *code* access to the token while allowing others to access our code but *not* our token, we'll be using [environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps). On a normal machine, we'd set these directly on our operating system, but using Repl.it we don't have access to this. Repl.it allows us to set secrets in environment variables through a special `.env` file. 
 
 First, we need to create a new file called exactly `.env`. Select "Add file" and name this file `.env`. It is important not to leave out the `.` at the beginning. Open this new file and add a variable to define your bot's secret token (note that this is the second token that we got while setting up the bot -- different from the Client ID that we used to add our bot to our server). It should look something like:
 
@@ -100,7 +100,7 @@ You'll need to:
 In the image below you we've highlighted the "Add file" button, the new file (`.env`) and how to define the secret token for our bot's use.
 
 ![Creating our .env file](./resources/09_repl_nodejs_env.png)
-**Image 9: Creating our .env file**
+
 
 Let's make a Discord bot that repeats everything we say but in reverse. We can do this in only a few lines of code. In your `index.js` file, add the following:
 
@@ -126,9 +126,9 @@ client.login(token);
 
 Let's tear this apart line by line to see what it does.
 
-* **Line 1** is what we had earlier. This line both tells Repl to install the third party library and brings it into this file so that we can use it.
+* **Line 1** is what we had earlier. This line both tells Repl.it to install the third party library and brings it into this file so that we can use it.
 * In **line 2**, we create a Discord `Client`. We'll use this client to send commands to the Discord *server* to control our bot and send it commands. 
-* In **line 3** we retrieve our secret token from the environment variables (which Repl set from our `.env` file). 
+* In **line 3** we retrieve our secret token from the environment variables (which Repl.it sets from our `.env` file). 
 * In **line 5**, we define an `event` for our client, which defines how our bot should react to the "ready" event. The Discord bot is going to run *asynchronously*, which might be a bit confusing if you're used to running standard synchronous code. We won't go into asynchronous coding in depth here, but if you're interested in what this is and why it's used, there's a good guide over at [RisingStack](https://blog.risingstack.com/node-hero-async-programming-in-node-js/). In short, instead of running the code in our file from top to bottom, we'll be running pieces of code in response to specific events.
 * In **lines 6-8** we define how our bot should respond to the "ready" event, which is fired when our bot successfully joins a server. We instruct our bot to output some information server side (i.e. this will be displayed in our Repl's output, but not sent as a message through to Discord). We'll print a simple `I'm in` message to see that the bot is there and print our bot's username (if you're running multiple bots, this will make it easier to work out who's doing what). 
 * **Lines 10-14** are similar, but instead of responding to an "ready" event, we tell our bot how to handle new messages. **Line 11** says we only want to respond to messages that aren't from us (otherwise our bot will keep responding to himself -- you can remove this line to see why that's a problem), and **line 12** says we'll send a new message to the same channel where we received a message (`msg.channel`) and the content we'll send will be the same message that we received, but backwards. To reverse a string, we split it into its individual characters, reverse the resulting array, and then join it all back into a string again.
@@ -139,7 +139,6 @@ Press the big green "Run" button again and you should see your bot reporting a s
 
 
 ![Repl output showing channel join](https://i.imgur.com/DnSvWvY.png)
-**Image 10: Seeing our bot join our server**
 
 Open Discord, and from within the server we created earlier, select your ReplBotApplication from the pane on the right-hand side of the screen.
 
@@ -180,10 +179,8 @@ const keep_alive = require('./keep_alive.js')
 After doing this and hitting the green "Run" button again, you should see some changes to your Repl. For one, you'll see a new pane in the top right which shows the web output from your server. We can see that visiting our Repl now returns a basic web page showing the "I'm alive" string that we told our web server to return by default.
 
 ![Running a Node server in the background](https://i.imgur.com/zTHpTbK.png)
-**Image 12** Output from our Node server
 
-
-Now your bot will stay alive even after closing your browser or shutting down your development machine. Repl will still clean up your server and kill your bot after about one hour of inactivity, so if you don't use your bot for a while, you'll have to log into Repl and start the bot up again. Alternatively, you can set up a third-party (free!) service like [Uptime Robot](https://uptimerobot.com/). Uptime Robot pings your site every 5 minutes to make sure it's still working -- usually to notify you of unexpected downtime, but in this case the constant pings have the side effect of keeping our Repl alive as it will never go more than an hour without receiving any activity. Note that you need to select the HTTP option instead of the Ping option when setting up Uptime Robot as Repl.it requires regular HTTP requests to keep your chatbot alive.
+Now your bot will stay alive even after closing your browser or shutting down your development machine. Repl will still clean up your server and kill your bot after about one hour of inactivity, so if you don't use your bot for a while, you'll have to log into Repl and start the bot up again. Alternatively, you can set up a third-party (free!) service like [Uptime Robot](https://uptimerobot.com/). Uptime Robot pings your site every 5 minutes to make sure it's still working -- usually to notify you of unexpected downtime, but in this case the constant pings have the side effect of keeping our Repl alive as it will never go more than an hour without receiving any activity. Note that you need to select the HTTP option instead of the Ping option when setting up Uptime Robot, as Repl.it requires regular HTTP requests to keep your chatbot alive.
 
 ## Forking and extending our basic bot
 This is not a very useful bot as is, but the possibilities are only limited by your creativity now! You can have your bot receive input from a user, process the input, and respond in any way you choose. In fact, with the basic input and output that we've demonstrated, we have most of the components of any modern computer, all of which are based on the [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture) (we could easily add the missing memory by having our bot write to a file, or with a bit more effort link in a [SQLite database](https://www.sqlite.org/index.html) for persistent storage).

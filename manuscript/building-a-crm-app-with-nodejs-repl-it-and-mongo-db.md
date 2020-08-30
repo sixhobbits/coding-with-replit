@@ -1,6 +1,6 @@
 # Building a CRM app with NodeJS, Repl.it, and MongoDB
 
-In this tutorial we'll use NodeJS on Repl.it, along with a MongoDB database to build a basic [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (Create, Read, Update, Delete) [CRM](https://en.wikipedia.org/wiki/Customer_relationship_management) (Customer Relationship Management) application. A CRM lets you store information about customers to help you track the status of every customer relationship. This can help businesses keep track of their clients and ultimately increase sales. The application will be able to store and edit customer details, as well as keep notes about them.
+In this tutorial, we'll use NodeJS on Repl.it, along with a MongoDB database to build a basic [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (Create, Read, Update, Delete) [CRM](https://en.wikipedia.org/wiki/Customer_relationship_management) (Customer Relationship Management) application. A CRM lets you store information about customers to help you track the status of every customer relationship. This can help businesses keep track of their clients and ultimately increase sales. The application will be able to store and edit customer details, as well as keep notes about them.
 
 This tutorial won't be covering the basics of Node.js, but each line of code will be explained in detail.
 
@@ -8,7 +8,7 @@ This tutorial won't be covering the basics of Node.js, but each line of code wil
 All of the code will be written and hosted in Repl.it, so you won't need to install any additional software on your computer. In this tutorial, we'll be covering:
 
 * Creating an account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-* Connecting out database to our Repl
+* Connecting our database to our Repl
 * Creating a user interface to insert customer data
 * Updating and deleting database entries
 
@@ -21,7 +21,7 @@ Head over to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and hit the "T
 
 After signing up, under "Shared Clusters", press the "Create a Cluster" button.
 
-You now have to select a provider and a region. For the purposes of this tutorial we chose Google Cloud Platform as the provider and Iowa (us-central1) as the region, although it should work regardless of the provider and region. ![Cluster Region](https://imgur.com/fHZDo7I.png)
+You now have to select a provider and a region. For the purposes of this tutorial, we chose Google Cloud Platform as the provider and Iowa (us-central1) as the region, although it should work regardless of the provider and region. ![Cluster Region](https://imgur.com/fHZDo7I.png)
 
 Under "Cluster Name" you can change the name of your cluster. Note that you can only change the name now - it can't be changed once the cluster is created. After you've done that, click "Create Cluster". 
 
@@ -38,7 +38,7 @@ First, we need to create a new Node.js Repl to write the code necessary to conne
 
 A great thing about Repl is that it makes projects public by default. This makes it easy to share and is great for collaboration and learning, but we have to be careful not to make our database credentials available on the open Internet.
 
-To solve this problem we'll be using `environment variables`, as we have done in previous tutorials. We'll create a special file that Repl.it recognizes and keeps private for you, and in that file we declare variables that become part of our Repl.it development environment and are accessible in our code.
+To solve this problem, we'll be using `environment variables`, as we have done in previous tutorials. We'll create a special file that Repl.it recognizes and keeps private for you, and in that file we declare variables that become part of our Repl.it development environment and are accessible in our code.
 
 In your Repl, create a file called `.env` by selecting “Files” in the left-hand pane and then clicking the "Add File" button. Note that the spelling has to be exact or the file will not be recognized. Add your MongoDB database username and password (not your login details to MongoDB Atlas) into the file in the below format:
 
@@ -165,7 +165,7 @@ Make a new file called `create.html` and paste the following into it:
 </body>
 </html>
 ```
-We won't go in depth into the above HTML. It is a very basic form with 4 fields (name, address, telephone, note) and a Submit button, which creates an interface that will look like the one below.
+We won't go in-depth into the above HTML. It is a very basic form with 4 fields (name, address, telephone, note) and a Submit button, which creates an interface that will look like the one below.
 
 ![Customer Details](https://imgur.com/Y1IIDq6.png)
 
@@ -191,7 +191,7 @@ app.post('/create', function (req, res, next) {
 })
 ```
 * **Line 1** defines a new route that listens for an HTTP 'POST' request at `/create`.
-* **Line 2** connects to the database. This happens asynchronously, so we define a callback function that will be called once the connection is done.
+* **Line 2** connects to the database. This happens asynchronously, so we define a callback function that will be called once the connection is made.
 * **Line 3** creates a new collection of customers. Collections in MongoDB are similar to Tables in SQL.
 * **Line 5** defines customer data that will be inserted into the collection. This is taken from the incoming request. The form data is parsed using the parsers that we defined earlier and is then placed in the `req.body` variable for us to use in the code.
 * **Line 6** inserts the customer data into the collection. This also happens asynchronously, and so we define another callback function that will get an error if an error occurred, or the response if everything happened successfully.
@@ -201,7 +201,7 @@ app.post('/create', function (req, res, next) {
 If you now run the Repl (you may need to refresh it) and submit the filled-in form, you'll get a message back that says "Customer created". If you then go and look in your cluster in MongoDB and select the "collections" button, you'll see a document has been created with the details that we submitted in the form.
 
 ## Updating and deleting database entries
-As a final step in this tutorial, we want to be able to update and delete database documents in our collection. To make things simpler we're going to make a new HTML page where we can request a document and then update or delete it.
+As a final step in this tutorial, we want to be able to update and delete database documents in our collection. To make things simpler, we're going to make a new HTML page where we can request a document and then update or delete it.
 
 First, let's make the routes to our new page. In your `index.js`, add the following code below the rest of your routing code (ie. before the MongoDB code):
 ```
@@ -291,7 +291,7 @@ html
 ```
 This is very similar to the HTML form we created previously for `create.html`, however this is written in the Pug templating language. We're creating a hidden element to store the "old" name, telephone, address, and note of the customer - this is for when we want to do an update.
 
-Using the old details to update the customer is an easy solution, but not the best solution as it makes the query cumbersome and slow. If you add extra fields in your database you would have to remember to update your query as well, otherwise it could lead to updating or deleting the wrong customer if they have the same information. A better, but more complicated way is to use the unique ID of the database document as that will only ever refer to one customer.
+Using the old details to update the customer is an easy solution, but not the best solution as it makes the query cumbersome and slow. If you add extra fields into your database you would have to remember to update your query as well, otherwise it could lead to updating or deleting the wrong customer if they have the same information. A better, but more complicated way is to use the unique ID of the database document as that will only ever refer to one customer.
 
 We have also put in placeholder variables for name, address, telephone, and note, and we have given the form 2 buttons with different actions.
 

@@ -8,8 +8,10 @@ At the end of this tutorial, our users will see a page similar to the one shown 
 
 ![](https://cdn.filestackcontent.com/i0IjIMSLmjQ7AI6yVQMA)
 
-## Overview
-We'll be building a simple web application step-by-step and explaining each line of code in detail. To follow, you should have some basic knowledge of programming and web concepts, such as what if statements are and how to use URLs. Specifically, we'll:
+## Overview and requirements
+We'll be building a simple web application step-by-step and explaining each line of code in detail. To follow, you should have some basic knowledge of programming and web concepts, such as what if statements are and how to use URLs. We'll be using Python for this tutorial, but we won't assume that you're a Python expert.
+
+Specifically, we'll:
 
 * Look at RSS feeds and how to use them in Python
 * Show how to set up a basic Flask web application
@@ -17,7 +19,7 @@ We'll be building a simple web application step-by-step and explaining each line
 * Use WordCloud to transform the text into images
 * Import Bootstrap and add some basic CSS styling
 
-We'll be using Python, but we won't assume that you're a Python expert and we'll show how to set up a full Python environment online so you won't need to install anything locally to follow along.
+We'll be using the online programming environment [Repl.it](https://repl.it) so you won't need to install any software locally to follow along step by step. If you want to adapt this guide to your own needs, you should create a free account by going to [repl.it](https://repl.it) and follow their sign up process.
 
 ## Web scraping
 
@@ -101,7 +103,7 @@ Here we still parse the feed and extract all of the latest article URLs, but ins
 - **Line 8:** we use a decorator to define the homepage of our application (an empty route, or `/`). 
 - **Lines 19-20**: We run Flask's built-in webserver to serve our content.
 
-Press "run" again, and you should see a new window appear in Repl in the top right. Here we can see a basic web page (viewable already to anyone in the world by sharing the URL you see above it), and we see the same output that we previously printed to the console. 
+Press "run" again, and you should see a new window appear in the top right pane. Here we can see a basic web page (viewable already to anyone in the world by sharing the URL you see above it), and we see the same output that we previously printed to the console. 
 
 ![](https://cdn.filestackcontent.com/9YDm81XR9eNQyY7y6lSQ)
 
@@ -160,7 +162,7 @@ If you run the code now, you should see output similar to that shown in the imag
 
 Although Flask allows us to return Python `str` objects directly to our visitors, the raw result is ugly compared to how people are used to seeing web pages. To take advantage of HTML formatting and CSS styling, it's better to define HTML *templates*, and use Flask's template engine, `jinja`, to inject dynamic content into these. Before we get to creating image files from our text content, let's set up a basic Flask template. 
 
-To use Flask's templates, we need to set up a specific file structure. Press the "new folder" button in Repl (next to the "new file" button, on the left pane), and name the resulting new folder `templates`. This is a special name recognised by Flask, so make sure you get the spelling exactly correct. 
+To use Flask's templates, we need to set up a specific file structure. Press the "new folder" button (next to the "new file" button, on the left pane), and name the resulting new folder `templates`. This is a special name recognised by Flask, so make sure you get the spelling exactly correct. 
 
 Select the new folder and press the "new file" button to create a new file inside our `templates` folder. Call the file `home.html`. Note below how the `home.html` file is indented one level, showing that it is inside the folder. If yours is not, drag and drop it into the `templates` folder so that Flask can find it.
 

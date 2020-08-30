@@ -66,16 +66,16 @@ Now we can get to the fun part of building a brain for our bot!
 
 
 ## Creating a Repl and installing our Discord dependencies
-The first thing we need to do is create a Python Repl to write the code for our Discord bot. Over at [Repl.it](https://repl.it), create a new Repl, choosing "Python" as your language.
+The first thing we need to do is create a Python Repl to write the code for our Discord bot. Over at [repl.it](https://repl.it), create a new Repl, choosing "Python" as your language.
 
-We don't need to reinvent the wheel, as there is already a great Python wrapper for the Discord bot API over on [GitHub](https://github.com/Rapptz/discord.py), which makes it a lot faster to get set up with a basic Python discord bot. To use library, we can simply write `import discord` at the top of `main.py`. Repl will handle installing this dependency when you press the "run" button. 
+We don't need to reinvent the wheel, as there is already a great Python wrapper for the Discord bot API over on [GitHub](https://github.com/Rapptz/discord.py), which makes it a lot faster to get set up with a basic Python discord bot. To use library, we can simply write `import discord` at the top of `main.py`. Repl.it will handle installing this dependency when you press the "run" button. 
 
 Our bot is nearly ready to go -- but we still need to plug in our secret token. This will authorize our code to control our bot.
 
 ## Setting up authorization for our bot
-By default, Repl code is public. This is great as it encourages collaboration and learning, but we need to be careful not to share our secret bot token (which gives anyone who has access to it full control of our bot).
+By default, Repl.it code is public. This is great as it encourages collaboration and learning, but we need to be careful not to share our secret bot token (which gives anyone who has access to it full control of our bot).
 
-To get around the problem of needing to give our *code* access to the token while allowing others to access our code but *not* our token, we'll be using [environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps). On a normal machine, we'd set these directly on our operating system, but using Repl we don't have access to this. Repl allows us to set secret environment variables through a special `.env` file. 
+To get around the problem of needing to give our *code* access to the token while allowing others to access our code but *not* our token, we'll be using [environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps). On a normal machine, we'd set these directly on our operating system, but using Repl.it we don't have access to this. Repl.it allows us to set secret environment variables through a special `.env` file. 
 
 First, we need to create a new file called exactly `.env`. Select "Add file" in the left pane, as shown in the image below, and name this file `.env`. It is important not to leave out the `.` at the beginning. 
 
@@ -146,7 +146,7 @@ The bot responds each time, reversing the text we enter.
 ## Keeping our bot alive
 Your bot can now respond to messages, but only for as long as your Repl is running. If you close your browser tab or shut down your computer, your bot will stop and no longer respond to messages on Discord.
 
-Repl will keep your code running after you close the browser tab only if you are running a web server. Because we are using the Python discord.py library, our bot doesn't require an explicit web server, but we can create a server and run it in a separate thread just to keep our Repl alive. We'll do this using the [Flask](http://flask.pocoo.org/) framework.
+Repl.it will keep your code running after you close the browser tab only if you are running a web server. Because we are using the Python discord.py library, our bot doesn't require an explicit web server, but we can create a server and run it in a separate thread just to keep our Repl alive. We'll do this using the [Flask](http://flask.pocoo.org/) framework.
 
 Create a new file in your project called `keep_alive.py` and add the following code:
 

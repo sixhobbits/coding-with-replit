@@ -5,7 +5,7 @@ In this tutorial, we'll be going over the [Quicksort](https://en.wikipedia.org/w
 ## Overview and requirements
  We're going to assume that you already know at least something about [sorting algorithms](https://en.wikipedia.org/wiki/Sorting_algorithm), and have been introduced to the idea of Quicksort. By the end of this tutorial, you should have a better understanding of how it works.
 
-We're also going to assume that you've covered some more fundamental computer science concepts, especially [recursion](https://en.wikipedia.org/wiki/Recursion#In_computer_science), which Quicksort relies on.
+We're also going to assume that you've covered some more fundamental computer science concepts, especially [recursion](https://en.wikipedia.org/wiki/Recursion#In_computer_science), on which Quicksort relies.
 
 To recap, Quicksort is one of the most efficient and most commonly used algorithms to sort a list of numbers. Unlike its competitor, Mergesort, Quicksort can sort a list in place, without the need to create a copy of the list, and therefore saving on memory requirements. 
 
@@ -39,7 +39,7 @@ def quicksort(xs):
 
 ## The Partition algorithm
 
-The idea behind partition algorithm seems really intuitive, but the actual algorithm to do it efficiently is pretty counter-intuitive. 
+The idea behind the partition algorithm seems intuitive, but the actual algorithm to do it efficiently is pretty counter-intuitive. 
 
 Let's start with the easy part -- the idea. We have a list of numbers that isn't sorted. We pick a point in this list, and make sure that all larger numbers are to the *right* of that point and all the smaller numbers are to the *left*. For example, given the random list:
 
@@ -82,7 +82,7 @@ We then consider each element `x` in the list `xs`. The ones that are smaller th
 
 This is much easier to read than the implementation at the start of this post, so why don't we do it like this? 
 
-The primary advantage of Quicksort is that it is an *in place* sorting algorithm. Although for the toy examples we're looking at, it might not seem like much of an issue to create a few copies of our list, if you're trying to sort terrabytes of data, or if you are trying to sort any amount of data on a very limited computer (e.g a smartwatch), then you don't want to needlessly copy arrays around.
+The primary advantage of Quicksort is that it is an *in place* sorting algorithm. Although for the toy examples we're looking at, it might not seem like much of an issue to create a few copies of our list, if you're trying to sort terabytes of data, or if you are trying to sort any amount of data on a very limited computer (e.g a smartwatch), then you don't want to needlessly copy arrays around.
 
 In Computer Science terms, this algorithm has a space-complexity of `O(2n)`, where `n` is the number of elements in our `xs` array. If we consider our example above of `xs = [8, 4, 2, 2, 1, 7, 10, 5]`, we'll need to store all 8 elements in the original `xs` array as well as three elements (`[7, 10, 8]`] in the `larger` array and four elements (`[4, 2, 2, 1]`) in the `smaller` array. This is a waste of space! With some clever tricks, we can do a series of swap operations on the original array and not need to make any copies at all.
 
@@ -189,7 +189,7 @@ quicksort(xs)
 # have a look at the results
 print(xs[:10])
 ```
-If you run this code, you will see the sorted list. This does what we expect, but it doesn't tell us about how efficient Quicksort is - so let's take a closer look. Replace the code in `main.py` with the following, and again add the code listed at the beginning of this tutorial after the imports.
+If you run this code, you will see the sorted list. This does what we expect, but it doesn't tell us about how efficient Quicksort is - so let's take a closer look. Replace the code in `main.py` with the following, and again add the code listed at the beginning of this tutorial after the imports on line 3.
 
 ```python
 from datetime import datetime

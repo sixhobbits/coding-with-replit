@@ -24,7 +24,7 @@ Specifically, in this tutorial we'll cover:
 * Using [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) to extract parts of scraped data
 
 
-We'll be using the online programming environment [repl.it](https://repl.it) so you won't need to install any software locally to follow along step by step. If you want to adapt this guide to your own needs, you should create a free account by going to [repl.it](https://repl.it) and follow their sign up process.
+We'll be using the online programming environment [Repl.it](https://repl.it) so you won't need to install any software locally to follow along step by step. If you want to adapt this guide to your own needs, you should create a free account by going to [repl.it](https://repl.it) and follow their sign up process.
 
 It would help if you have basic familiarity with Python or another high-level programming language, but we'll be explaining each line of code we write in detail so you should be able to keep up, or at least replicate the result, even if you don't.
 
