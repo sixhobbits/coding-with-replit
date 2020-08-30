@@ -1,6 +1,6 @@
 # Creating and hosting a basic web application with Django and Repl.it
 
-In this tutorial, we'll be using Django to create an online service that shows visitors their current weather and location. We'll develop the service and host it using [repl.it](https://repl.it).
+In this tutorial, we'll be using Django to create an online service that shows visitors their current weather and location. We'll develop the service and host it using [Repl.it](https://repl.it).
 
 To work through this tutorial, you should ideally have basic knowledge of Python and some knowledge of web application development. However, we'll explain all of our reasoning and each line of code thoroughly , so if you have any programming experience you should be able to follow along as a complete Python or web app beginner too. We'll also be making use of some HTML, JavaScript, and jQuery, so if you have been exposed to these before you'll be able to work through more quickly. If you haven't, this will be a great place to start.
 
@@ -12,22 +12,18 @@ To display the weather at the user's current location, we'll have to tie togethe
 * [Open Weather Map](https://openweathermap.org) to get the current weather at our visitors' location. 
 
 The main goals of this tutorial are to:
-* Show how to set up and host a Django application using repl.it.
+* Show how to set up and host a Django application using Repl.it.
 * Show how to join existing APIs together to create a new service. 
 
 By using this tutorial as a starting point, you can easily create your own bespoke web applications. Instead of showing weather data to your visitors, you could, for example, pull and combine data from any of the hundreds of APIs found at [this list of public APIs](https://github.com/toddmotto/public-apis).
 
 
 ## Setting up 
-You won't need to install any software or programming languages on your local machine, as we'll be developing our application directly through [repl.it](repl.it). Head over there and create an account by hitting "Sign up" in the top right-hand corner.
-
-![Repl sign up page](https://i.imgur.com/ll2hg87.png)
-
-Press the "Start coding now" button on the next page, and search for "Django" from the list of available languages and frameworks. Repl.it will go ahead and set up a full Django project for you with some sensible defaults. The project will include a single page saying "Hello Repl.it". It should look very similar to the  page below.
+Create a new Repl and select "Django Template" from the list of available languages and frameworks. Repl.it will go ahead and set up a full Django project for you with some sensible defaults. The project will include a single page saying "Hello Repl.it". It should look very similar to the  page below. (TO DO - update image)
 
 ![The repl.it IDE on a new Django project](https://i.imgur.com/htQRomt.png)
 
-In the left-most panel, you can see all the files that make up your Django project, organized into directories.
+In the left-most panel, you can see all the files that make up your Django project.
 
 We won't explain what all these different components are for and how they tie together in this tutorial. If you want to understand Django better, you should definitely go through their [official tutorial](https://docs.djangoproject.com/en/2.0/intro/tutorial01/). Normally [I recommend Flask over Django](https://www.codementor.io/garethdwyer/flask-vs-django-why-flask-might-be-better-4xs7mdf8v) for beginners and for projects this simple, but Repl.it makes the Django setup easy by providing this initial set up. We'll be modifying only a few of these files to get the results that we want.
 

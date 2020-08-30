@@ -1,26 +1,23 @@
-# Introduction to Machine Learning with Python and repl.it
+# Introduction to Machine Learning with Python and Repl.it
 
-In this tutorial, we're going to walk through how to set up a basic Python [repl](https://repl.it) that can learn the difference between two categories of sentences, positive and negative. For example, if you had the sentence "I love it!", we want to train a machine to know that this sentence is associated with happy and positive emotions. If we have a sentence like "it was really terrible", we want the machine to label it as a negative or sad sentence. 
+In this tutorial, we're going to walk through how to set up a basic Python [Repl](https://repl.it) that can learn the difference between two categories of sentences, positive and negative. For example, if you had the sentence "I love it!", we want to train a machine to know that this sentence is associated with happy and positive emotions. If we have a sentence like "it was really terrible", we want the machine to label it as a negative or sad sentence. 
 
 The maths, specifically calculus and linear algebra, behind machine learning gets a bit hairy. We'll be abstracting this away with the Python library [scikit-learn](https://scikit-learn.org/), which makes it possible to do advanced machine learning in a few lines of Python.
 
-At the end of this tutorial you'll understand the fundamental ideas of automatic classification and have a program that can learn by itself to distinguish between different categories of text. You'll be able to use the same code to learn new categories (e.g. spam/not-spam, or clickbait/non-clickbait).
+At the end of this tutorial, you'll understand the fundamental ideas of automatic classification and have a program that can learn by itself to distinguish between different categories of text. You'll be able to use the same code to learn new categories (e.g. spam/not-spam, or clickbait/non-clickbait).
 
-## Prerequisites
+## Overview and requirements
+To follow along with this tutorial, you should have at least basic knowledge of Python or a similar programming language. Ideally, you should also sign up for a [Repl.it](https://repl.it) account so that you can modify and extend the bot we build, but it's not completely necessary.
 
-To follow along this tutorial, you should have at least basic knowledge of Python or a similar programming language. Ideally, you should also sign up for a [repl.it](https://repl.it) account so that you can modify and extend the bot we build, but it's not completely necessary.
+In this tutorial, we will:
+* Create some simple mock data - text to classify as positive or negative
+* Explain vectorisation of the dataset
+* Cover how to classify text using a machine learning classifier
+* Compare this to a manual classifier
 
 ## Setting up
 
-If you're following along using repl.it, then visit the homepage and login or create a new account. Follow the prompts to create your first Repl, and choose "Python". You'll be taken to a new Repl project where you can run Python code and immediately see the output, which is great for rapid development.
-
-The first thing we need to do is install scikit-learn, which is a really nice Python library to get started with machine learning. Create a new file using the "add file" button at the top left, call the file `requirements.txt` (the exact name is important -- it's a special file that repl will look for dependencies in and install them automatically), and add the line `scikit-learn` to the top of the new file that gets created.
-
-You should see the library installing through the output produced in the right-hand panel, as in the image below.
-
-![repl-start-screen.png](https://cdn.filestackcontent.com/ABu0DokgQmKBxPp5Mlvk)
-
-Now you have the powerful and simple scikit-learn available! Let's learn how to use it. Open the `main.py` file that Repl created for you automatically and add the following two imports to the top.
+Create a new Python Repl and open the `main.py` file that Repl created for you automatically. Add the following two imports to the top and run the Repl so that these dependencies are installed.
 
 ```python
 from sklearn import tree
@@ -77,7 +74,7 @@ Let's go through an example to see how this works. If we had the two sentences
 
 `["nice pizza is nice"], ["what is pizza"]`
 
-then we would have a dataset with four unique words in it. The first then we'd want to do is create a vocabulary mapping to map each unique word to a unique number.  We could do this as follows:
+then we would have a dataset with four unique words in it. The first thing we'd want to do is create a vocabulary mapping to map each unique word to a unique number.  We could do this as follows:
 
 ```python
 {
@@ -88,7 +85,7 @@ then we would have a dataset with four unique words in it. The first then we'd w
 }
 ```
 
-To create this, we simply go through both sentences from left to right, mapping each new word to the next available number and skipping words that we've seen before. Now we can again convert our sentences into bag of words vectors as follows
+To create this, we simply go through both sentences from left to right, mapping each new word to the next available number and skipping words that we've seen before. We can now convert our sentences into bag of words vectors as follows, where we indicate the frequency of occurrence of each of the words in our vocabulary:
 
 ```python
 [
@@ -103,7 +100,7 @@ The first sentence contains the word "nice" twice, while the second sentence doe
 
 This representation is called "bag of words" because we lose all of the information represented by the *order* of words. We don't know, for example, that the first sentence starts and ends with "nice", only that it contains the word "nice" twice. 
 
-With real data, these arrays get *very* long. There are millions of words in most languages, so for a big dataset containing most words, each sentence needs to be represented by a very long array, where nearly all values are set to zero (all the words not in that sentence). This could take up a lot of space, but luckily scikit-learn uses a clever sparse-matrix implementation that doesn't quite look like the above, but the overall concept remains the same.
+With real data, these arrays get *very* long. There are millions of words in most languages, so for a big dataset containing most words, each sentence needs to be represented by a very long array, where nearly all values are set to zero (all the words not in that sentence). This could take up a lot of space, but luckily scikit-learn uses a clever sparse-matrix implementation to overcome this. This doesn't quite look like the above, but the overall concept remains the same.
 
 Let's see how to achieve the above using scikit-learn's optimised vectoriser.
 
@@ -166,11 +163,13 @@ Now that we have a vectorised representation our problem, let's take a look at h
 
 A classifier is a statistical model that tries to predict a label for a given input. In our case, the input is the text and the output is either "positive" or "negative", depending on whether the classifier thinks that the input is positive or negative. 
 
-A machine learning classifier can be "trained". We give it labelled data and it tries to learn rules based on that data. Every time it gets more data, it updates its rules slightly to account for the new information. There are many kinds of classifiers, but one of the simplest is called Decision Tree. 
+A machine learning classifier can be "trained". We give it labelled data and it tries to learn rules based on that data. Every time it gets more data, it updates its rules slightly to account for the new information. There are many kinds of classifiers, but one of the simplest is called a Decision Tree. 
 
 Decision trees learn a set of yes/no rules by building decisions into a tree structure. Each new input moves down the tree, while various questions are asked one by one. When the input filters all the way to a leaf node in the tree, it acquires a label.
 
 If that's confusing, don't worry! We'll walk through a detailed example with a picture soon to clarify. First, let's show how to get some results using Python.
+
+Add the following lines to `main.py`:
 
 ```python
 classifier = tree.DecisionTreeClassifier()
@@ -205,33 +204,24 @@ It looks like the computer got every example right! It's not a difficult problem
 
 Decision Trees are not the most powerful machine learning model, but they have one advantage over most other algorithms: after we have trained them, we can look inside and see exactly how they work. More advanced models like deep neural networks are nearly impossible to make sense of after training.
 
-Scikit-learn contains a useful "graphviz" helper to inspect tree-based models. Add the following code to the end of your repl.
+The Scikit-learn `tree` module contains a useful function to assist in visualising trees. Add the following code to the end of your Repl:
 
 ```python
-tree.export_graphviz(
-    classifier,
-    out_file='tree.dot',
-    feature_names=vectorizer.get_feature_names(),
-) 
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(5,5))
+tree.plot_tree(classifier,feature_names = vectorizer.get_feature_names(), rounded = True, filled = True) 
+fig.savefig('tree.png')
 ```
 
-This will create an export of the trained model which we can visualise. Look for the new `tree.dot` file in the left-most pane that should have been created after running the above code. 
+In the left-hand pane, you should see a file called 'tree.png'. If you open it, your tree graph should looks as follows:
 
-![repl-file-viewer.png](https://cdn.filestackcontent.com/xWlG01RhTeWzHIObvXnl)
-
-Copy the contents of this file (shown in the middle pane above) to your clipboard and navigate to http://www.webgraphviz.com/. Paste the Tree representation into the big input box on the page you see and press "Generate Graph"
-
-![graph-viz-online.png](https://cdn.filestackcontent.com/SN6CImYtTSOflOntRSeO)
-
-You should see a tree graph that looks as follows.
-
-![decision-tree-vis.png](https://cdn.filestackcontent.com/m9c1SDznSoqGOvDxMdVM)
+![A visualised decision tree](./resources/decision_tree.png)
 
 The above shows a decision tree that only learned two rules. The first rule (top square) is about the word "hate". The rule is "is the number of times 'hate' occurs in this sentence less than or equal to 0.5". None of our sentences contain duplicate words, so each rule will really be only about whether the word appears or not (you can think of the `<= 0.5` rules as `< 1` in this case).
 
-For each question in our training dataset, we can ask if the first rule is True or False. If the rule is True for a given sentence, we'll move that sentence down the tree left (following the "True" arrow). If not, we'll go right (following the "False" arrow).
+For each question in our training dataset, we can ask if the first rule is True or False. If the rule is True for a given sentence, we'll move that sentence down the tree **left**. If not, we'll go **right**.
 
-Once we've asked this first question for each sentence in our dataset, we'll have three sentences for which the answer is "False", because three of our training sentences contain the word "hate". These three sentences go right in the decision tree and end up at first leaf node (an end node with no arrows coming out the bottom). This leaf node has `value = [3, 0]` in it, which means that three samples reach this node, and three belong to the negative class and zero to the positive class.
+Once we've asked this first question for each sentence in our dataset, we'll have three sentences for which the answer is "False", because three of our training sentences contain the word "hate". These three sentences go right in the decision tree and end up at first leaf node (an end node with no arrows coming out the bottom). This leaf node has `value = [3,0]` in it, which means that three samples reach this node, and three belong to the negative class and zero to the positive class.
 
 For each sentence where the first rule is "True" (the word "hate" appears less than 0.5 times, or in our case 0 times), we go down the left of the tree, to the node where `value = [2,5]`. This isn't a leaf node (it has more arrows coming out the bottom), so we're not done yet. At this point we have two negative sentences and all five positive sentences still.
 
@@ -268,13 +258,18 @@ Also, once we've perfected a set of manual rules, they'll still only work for a 
 
 In the example we walked through, our model was a perfect student and learned to correctly classify all five unseen sentences, this is not usually the case for real-world settings. Because machine learning models are based on probability, the goal is to make them as accurate as possible, but in general you will not get 100% accuracy. Depending on the problem, you might be able to get higher accuracy by hand-crafting rules yourself, so machine learning definitely isn't the correct tool to solve all classification problems. 
 
-Try the code on bigger datasets to see how it performs. There is no shortage of interesting data sets to experiment with. I wrote another machine learning walkthrough [here](https://www.codementor.io/garethdwyer/introduction-to-machine-learning-with-python-s-scikit-learn-czha398p1) that shows how to use a larger clickbait dataset to teach a machine how to classify between clickbait articles and real ones, using similar methods to those described above. That tutorial uses an SVM classifier and a more advanced vectorisation method, but see if you can load the dataset from there into the classifier we built in this tutorial and compare the results.
+Try the code on bigger datasets to see how it performs. There is no shortage of interesting data sets to experiment with. For example, you could have a look at positive vs negative movie reviews from IMDB using the dataset [here](https://keras.io/api/datasets/imdb/). See if you can load the dataset from there into the classifier we built in this tutorial and compare the results.
 
-You can fork this repl here: [https://repl.it/@GarethDwyer1/machine-learning-intro](https://repl.it/@GarethDwyer1/machine-learning-intro) to keep hacking on it (it's the same code as we walked through above but with some comments added.) If you prefer, the entire program is shown below so you can copy paste it and work from there.
+You can fork this Repl here: [https://repl.it/@GarethDwyer1/machine-learning-intro](https://repl.it/@GarethDwyer1/machine-learning-intro) to keep hacking on it (it's the same code as we walked through above but with some comments added.) If you prefer, the entire program is shown at the end of this tutorial, so you can copy paste it and work from there.
+
+In the next chapter, we'll be investigating the Quicksort algorithm. Whether you’re applying for jobs or just like algorithms, it’s useful to understand how sorting works. In real projects, most of the time you’ll just call .sort(), but here you’ll build a sorter from scratch and understand how it works.
+
+---
 
 ```python
 from sklearn import tree
 from sklearn.feature_extraction.text import CountVectorizer
+import matplotlib.pyplot as plt
 
 positive_texts = [
     "we love you",
@@ -315,11 +310,9 @@ classifier.fit(training_vectors, training_labels)
 
 print(classifier.predict(testing_vectors))
 
-tree.export_graphviz(
-    classifier,
-    out_file='tree.dot',
-    feature_names=vectorizer.get_feature_names(),
-) 
+fig = plt.figure(figsize=(5,5))
+tree.plot_tree(classifier,feature_names = vectorizer.get_feature_names(), rounded = True, filled = True) 
+fig.savefig('tree.png') 
 
 def manual_classify(text):
     if "hate" in text:
