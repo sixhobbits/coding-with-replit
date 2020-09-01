@@ -1,5 +1,5 @@
 
-# Repl.it and GitHub: Using and contributing to open-source projects
+# Repl.it and GitHub: TEST and contributing to open-source projects
 
 You've probably heard of [GitHub](https://github.com), which hosts millions of coding projects that you can use or learn from.
 
