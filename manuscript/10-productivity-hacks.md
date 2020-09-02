@@ -38,7 +38,7 @@ ball3 = Ball()
 
 Instead of typing out all three lines, you can type out the first one, leave your cursor position on that line, and press `Shift+Alt+down` (`shift+option+down` on MacOS) twice. This will create two copies of the line, directly below the original one, and then you can simply change the number in the variable to account for the second two balls.
 
-![**Image 2:** *Copying the current selected line.*](https://codewithrepl.it/img/10-copy-current-line.gif)
+[![**Image 2:** *Copying the current selected line.*](resources/10-copy-current-line.png)](https://codewithrepl.it/img/10-copy-current-line.gif)
 
 ## Deleting entire lines
 
@@ -51,9 +51,10 @@ Instead of deleting the entire line, you can also delete from your cursor up to 
 * `Ctrl+Backspace` (`cmd+backspace` on MacOS) to delete backwards
 * `Ctrl+K` (same on MacOS) to delete forwards
 
-As an example, below you can see how we might use this to first delete one of the our `elif` blocks by doing two "delete line" operations. We then change our random speed to be constant by using a "delete to end of line" operation from the `=` sign and then typing our constant.
+As an example, below you can see how we might use this to first delete one of the our `elif` blocks by doing two "delete line" operations. We then change our random speed to be constant by using a "delete to end of line" operation from the `=` sign and then typing our constant.([Click](https://codewithrepl.it/img/10-deleting-lines.gif) to open gif)
 
-![**Image 3:** *Deleting selected lines of code.*](https://codewithrepl.it/img/10-deleting-lines.gif)
+[![**Image 3:** *Deleting selected lines of code.*](resources/10-deleting-lines.png)](https://codewithrepl.it/img/10-deleting-lines.gif)
+([Click](https://codewithrepl.it/img/10-deleting-lines.gif) to open gif)
 
 ## Inserting blank lines
 
