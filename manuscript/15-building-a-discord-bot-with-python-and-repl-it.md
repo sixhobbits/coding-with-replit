@@ -21,7 +21,7 @@ Let's get through these admin steps first and then we can get to the fun part of
 
 Once you have an account, you'll want to create a Discord application. Visit [the Discord developer's page](https://discordapp.com/developers/applications/) and press the "New application" button, as in the image below. 
 
-![Creating a new Discord application](resources/discord_newapplication.png)
+![Creating a new Discord application](discord_newapplication.png)
 
 Fill out a name for your bot and select "Create".
 
