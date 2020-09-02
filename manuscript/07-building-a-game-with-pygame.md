@@ -138,7 +138,7 @@ To achieve this, we'll add logic to our `update()` method (this is why we kept i
 
 This checks to see if the top of the ball is above the top of the screen. If it is, we set the speed back to `(0, 1)` (moving down).
 
-![**Image 5:** *Now we can bounce the ball off the ceiling.*](https://www.codewithrepl.it/img/07-bouncing-ball.gif)
+![**Image 5:** *Now we can bounce the ball off the ceiling.*](https://www.codewithrepl.it/img/07-blit-tennis-ball.png)
 
 So far, we have restricted the ball to moving vertically, but we can apply the same principles and move it horizontally or diagonally too. Let's also add some randomness into the mix so that it's less predictable (and harder for the player to press). The ball will randomly change its horizontal movement when it bounces off the ceiling and each time we throw it.
 
@@ -272,7 +272,7 @@ To kill balls when they fall through the floor, we can add another check to the 
 
 Run the code again and you should be able to juggle three balls. See how long you can keep them in the air.
 
-![**Image 6:** *Juggling three balls.*](https://www.codewithrepl.it/img/07-three-balls.gif)
+![**Image 6:** *Juggling three balls.*](https://www.codewithrepl.it/img/07-blit-tennis-ball.png)
 
 If you want a harder version, add a counter to keep track of how many successful throws the player has achieved and add a new ball for every three successful throws.
 
