@@ -58,7 +58,7 @@ https://discordapp.com/api/oauth2/authorize?scope=bot&client_id=7462691629173310
 
 Visit the URL that you created in your web browser and you'll see a page similar to the following where you can choose which server to add your bot to.
 
-![Authorizing our bot to join our server](resources\discord_addbottoserver.PNG)
+![Authorizing our bot to join our server](resources/discord_addbottoserver.PNG)
 
 Select the server we created in the step before this and hit the "authorize" button. After completing the captcha, you should get an in-app Discord notification telling you that your bot has joined your server.
 
@@ -79,7 +79,7 @@ To get around the problem of needing to give our *code* access to the token whil
 
 First, we need to create a new file called exactly `.env`. Select "Add file" in the left pane, as shown in the image below, and name this file `.env`. It is important not to leave out the `.` at the beginning. 
 
-![Create a new file called .env](resources\add_file.PNG)
+![Create a new file called .env](resources/add_file.PNG)
 
 Open this new file and add a variable to define your bot's secret token (note that this is the second token that we got while setting up the bot -- different from the Client ID that we used to add our bot to our server). It should look something like:
 
