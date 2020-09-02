@@ -7,13 +7,3 @@
 06-github-and-run-button.md
 07-building-a-game-with-pygame.md
 08-storing-secrets-and-history.md
-09-test-driven-development.md
-10-productivity-hacks.md
-13-beginner-web-scraping-with-python-and-repl-it.md
-14-building-news-word-clouds-using-python-and-repl-it.md
-15-building-a-discord-bot-with-python-and-repl-it.md
-16-building-a-discord-bot-with-node-and-repl-it.md
-17-building-a-django-application-with-repl-it.md
-18-building-a-crm-app-with-nodejs-repl-it-and-mongo-db.md
-19-introduction-to-machine-learning-with-python-and-repl-it.md
-20-quicksort-tutorial-python-implementation-with-line-by-line-explanation.md
