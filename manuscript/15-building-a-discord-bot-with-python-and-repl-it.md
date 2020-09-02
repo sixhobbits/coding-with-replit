@@ -21,23 +21,23 @@ Let's get through these admin steps first and then we can get to the fun part of
 
 Once you have an account, you'll want to create a Discord application. Visit [the Discord developer's page](https://discordapp.com/developers/applications/) and press the "New application" button, as in the image below. 
 
-![Creating a new Discord application](discord_newapplication.png)
+![Creating a new Discord application](resources/discord_newapplication.PNG)
 
 Fill out a name for your bot and select "Create".
 
 The first thing to do on the next page is to note your Client ID, which you'll need to add the bot to the server. You can come back later and get it from this page, or copy it somewhere where you can easily find it later.
 
-![Record your Client ID](resources/discord_client_id.png)
+![Record your Client ID](resources/discord_client_id.PNG)
 
 You can also rename the application and provide a description for your bot at this point and press "Save Changes".
 
 You have now created a Discord application. The next step is to add a bot to this application, so head over to the "Bot" tab using the menu on the left and press the "Add Bot" button, as indicated below. Click "Yes, do it" when Discord asks if you're sure about bringing a new bot to life.
 
-![Adding a bot to our Discord Application](resources/discord_addbot.png)
+![Adding a bot to our Discord Application](resources/discord_addbot.PNG)
 
 The last thing we'll need from our bot is a Token. Anyone who has the bot's token can prove that they own the bot, so you'll need to be careful not to share this with anyone. You can get the token by pressing "Click to Reveal Token", or copy it to your clipboard without seeing it by pressing "Copy".
 
-![Generating a token for our Discord bot](resources/discord_bottoken.png)
+![Generating a token for our Discord bot](resources/discord_bottoken.PNG)
 
 Take note of your token or copy it to your clipboard, as we'll need to add it to our code soon.
 
@@ -45,7 +45,7 @@ Take note of your token or copy it to your clipboard, as we'll need to add it to
 ### Creating a Discord server
 If you don't have a Discord server to add your bot to, you can create one by either opening the desktop Discord application that you downloaded earlier or returning to the Discord home page in your browser. Press the "+" icon indicated by the exclamation mark, as shown below, to create a server.
 
-![Creating a Discord server](resources/discord_addserver.png)
+![Creating a Discord server](resources/discord_addserver.PNG)
 
 Press "Create a server" in the screen that follows, and then give your server a name. Once the server is up and running, you can chat with yourself, or invite some friends to chat with you. Soon we'll invite our bot to chat with us as well.
 
@@ -58,7 +58,7 @@ https://discordapp.com/api/oauth2/authorize?scope=bot&client_id=7462691629173310
 
 Visit the URL that you created in your web browser and you'll see a page similar to the following where you can choose which server to add your bot to.
 
-![Authorizing our bot to join our server](resources\discord_addbottoserver.png)
+![Authorizing our bot to join our server](resources\discord_addbottoserver.PNG)
 
 Select the server we created in the step before this and hit the "authorize" button. After completing the captcha, you should get an in-app Discord notification telling you that your bot has joined your server.
 
@@ -79,7 +79,7 @@ To get around the problem of needing to give our *code* access to the token whil
 
 First, we need to create a new file called exactly `.env`. Select "Add file" in the left pane, as shown in the image below, and name this file `.env`. It is important not to leave out the `.` at the beginning. 
 
-![Create a new file called .env](resources\add_file.png)
+![Create a new file called .env](resources\add_file.PNG)
 
 Open this new file and add a variable to define your bot's secret token (note that this is the second token that we got while setting up the bot -- different from the Client ID that we used to add our bot to our server). It should look something like:
 
@@ -133,11 +133,11 @@ Press the big green "Run" button again and you should see your bot reporting a s
 
 Open Discord, and from within the server we created earlier, select your ReplBotApplication from the pane on the right-hand side of the screen.
 
-![The Repl bot is active](resources/repl_bot_active.png).
+![The Repl bot is active](resources/repl_bot_active.PNG).
 
 Once you have selected this, you will be able to send a message (by typing into the box highlighted below) and see your bot respond!
 
-![Send a message to your bot](resources/message_repl_bot.png).
+![Send a message to your bot](resources/message_repl_bot.PNG).
 
 The bot responds each time, reversing the text we enter.
 
