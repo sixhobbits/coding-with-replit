@@ -57,7 +57,7 @@ https://discordapp.com/api/oauth2/authorize?scope=bot&client_id=7462691629173310
 
 Visit the URL that you created in your web browser and you'll see a page similar to the following where you can choose which server to add your bot to.
 
-![Authorizing our bot to join our server](resources\discord_addbottoserver.PNG)
+![Authorizing our bot to join our server](resources/discord_addbottoserver.PNG)
 
 Select the server we created in the step before this and hit the "authorize" button. After completing the captcha, you should get an in-app Discord notification telling you that your bot has joined your server.
 
