@@ -166,6 +166,7 @@ To use Flask's templates, we need to set up a specific file structure. Press the
 
 Select the new folder and press the "new file" button to create a new file inside our `templates` folder. Call the file `home.html`. Note below how the `home.html` file is indented one level, showing that it is inside the folder. If yours is not, drag and drop it into the `templates` folder so that Flask can find it.
 
+![](resources/new_template.PNG)
 
 In the `home.html` file, add the following code, which is a mix between standard HTML and Jinja's templating syntax to mix dynamic content into the HTML.
 
