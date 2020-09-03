@@ -100,7 +100,9 @@ Now modify your game loop to include a call to the new `update()` method. The lo
 
 The `(0, 1)` tuple causes the ball to move its Y coordinate by 1 each loop and keep a constant X coordinate. This has the effect of making the ball drop slowly down the screen. Run your code again to check that this works.
 
-![**Image 4:** *The ball falling at a constant rate.*](https://www.codewithrepl.it/img/07-falling-ball.gif)
+[![**Image 4:** *The ball falling at a constant rate.*](resources/07-falling-ball.png)](https://www.codewithrepl.it/img/07-falling-ball.gif)
+
+[*click to open gif*](https://www.codewithrepl.it/img/07-falling-ball.gif)
 
 When the ball gets to the bottom of the screen, it'll just keep falling but that's OK for now. Let's see how we can add click detection.
 
@@ -272,7 +274,9 @@ To kill balls when they fall through the floor, we can add another check to the 
 
 Run the code again and you should be able to juggle three balls. See how long you can keep them in the air.
 
-![**Image 6:** *Juggling three balls.*](https://www.codewithrepl.it/img/07-blit-tennis-ball.png)
+[![[**Image 6:** *Juggling three balls.*](resources/07-three-balls.png)](https://www.codewithrepl.it/img/07-three-balls.gif)
+
+[*click to open gif*](https://www.codewithrepl.it/img/07-three-balls.gif)
 
 If you want a harder version, add a counter to keep track of how many successful throws the player has achieved and add a new ball for every three successful throws.
 
