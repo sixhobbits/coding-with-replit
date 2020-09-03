@@ -14,7 +14,7 @@ Similarly to learning to touch type, there is often a steep *learning curve* whe
 
 If you hit `Ctrl+K` (`Cmd+K` on MacOS) you'll see the following modal pop up, which lets you navigate through different parts of Repl.it at lightning speed using only your keyboard. If you have a lot of files, it's often useful to open them like this rather than scrolling through the directory structure in the files pane (the `find` option searches through files by their *name* while the `search` option searches through files by their *contents*.)
 
-![**Image 1:** *Using the global command palette.*](https://codewithrepl.it/img/10-global-command-palette.png)
+![**Image 1:** *Using the global command palette.*](https://www.codewithrepl.it/img/10-global-command-palette.png)
 
 The keyboard shortcut indicated to the right of each option shows how to activate that option directly without opening up the global command palette, but once it's open you can type in a part of any of the options to activate that option. For example, in our weather project app, I can type `Cmd+K` and then type `fi` (start of `find`) and press `Enter` and then type `Lo` (start of `London.txt`) and press `Enter` again to quickly open the weather log for London.
 
