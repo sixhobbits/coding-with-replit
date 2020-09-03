@@ -5,7 +5,6 @@
 04-data-science-and-visualisation-with-repl-it.md
 05-pair-programming-using-multiplayer-with-repl-it.md
 06-github-and-run-button.md
-07-building-a-game-with-pygame.md
 08-storing-secrets-and-history.md
 09-test-driven-development.md
 10-productivity-hacks.md
