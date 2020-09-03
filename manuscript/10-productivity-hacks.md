@@ -40,8 +40,6 @@ Instead of typing out all three lines, you can type out the first one, leave you
 
 ![**Image 2:** *Copying the current selected line.*](resources/10-copy-current-line.png)
 
-[*click to open gif*](https://www.codewithrepl.it/img/07-three-balls.gif)
-
 ## Deleting entire lines
 
 There may be instances where you'd want to delete large chunks of code at a time (it happens to the best of us!). 
