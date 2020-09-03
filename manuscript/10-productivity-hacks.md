@@ -18,7 +18,7 @@ To access the command palette press `F1` or `Ctrl+Shift+P` (`cmd+shift+P` on Mac
 
 You can use the shortcuts directly from the command palette by selecting the code you wish to edit and clicking on the command in the drop-down menu, or use it to refresh your memory on the keybindings associated with the shortcuts you use often.
 
-![**Image 1:** *Opening the command palette.*](https://www.codewithrepl.it/img/10-open-cmd-palette.png)
+![**Image 1:** *Opening the command palette.*](resources/10-open-cmd-palette.png)
 
 Let's take a look at how these work by editing the [PyGame juggling project](https://repl.it/@GarethDwyer1/cwr-07-juggling-with-pygame) that we covered in a [previous tutorial](http://www.codewithrepl.it/07-building-a-game-with-pygame.html).
 
@@ -136,7 +136,7 @@ The two main keyboard-focused text editors are called [Vim](https://www.vim.org/
 
 If you've gotten used to either, you can emulate the experience in Repl.it by switching your keybinds. Go to the "Settings" tab and scroll down to where you can toggle between "default", "emacs" and "vim".
 
-![**Image 11:** *Setting your keybinds to vim or emacs.*](https://www.codewithrepl.it/img/10-vim-emacs.png)
+![**Image 11:** *Setting your keybinds to vim or emacs.*](resources/10-vim-emacs.png)
 
 ## Make it your own
 
