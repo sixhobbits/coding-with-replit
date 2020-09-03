@@ -274,7 +274,7 @@ To kill balls when they fall through the floor, we can add another check to the 
 
 Run the code again and you should be able to juggle three balls. See how long you can keep them in the air.
 
-[![[**Image 6:** *Juggling three balls.*](resources/07-three-balls.png)](https://www.codewithrepl.it/img/07-three-balls.gif)
+[![**Image 6:** *Juggling three balls.*](resources/07-three-balls.png)](https://www.codewithrepl.it/img/07-three-balls.gif)
 
 [*click to open gif*](https://www.codewithrepl.it/img/07-three-balls.gif)
 
