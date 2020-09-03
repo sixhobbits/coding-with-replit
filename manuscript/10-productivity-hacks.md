@@ -65,8 +65,6 @@ Press `Ctrl+Shift+Enter` (`cmd+shift+enter` on MacOS) to insert a blank line dir
 
 ![**Image 4:** *Inserting lines.*](resources/10-inserting-lines.png)
 
-[*click to open gif*](https://www.codewithrepl.it/img/10-inserting-lines.gif)
-
 ## Indenting and dedenting lines
 
 When writing Python, you probably pay more attention to whitespace (spaces or tabs) than in other langauges, which use braces to handle logic. You're probably used to indenting and dedenting using `Tab` and `Shift+Tab`, which requires you to first place the cursor at the start of the line.
