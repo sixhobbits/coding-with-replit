@@ -8,7 +8,6 @@
 07-building-a-game-with-pygame.md
 08-storing-secrets-and-history.md
 09-test-driven-development.md
-10-productivity-hacks.md
 13-beginner-web-scraping-with-python-and-repl-it.md
 14-building-news-word-clouds-using-python-and-repl-it.md
 15-building-a-discord-bot-with-python-and-repl-it.md
