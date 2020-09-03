@@ -40,8 +40,6 @@ Instead of typing out all three lines, you can type out the first one, leave you
 
 ![**Image 2:** *Copying the current selected line.*](resources/10-copy-current-line.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-copy-current-line.gif)
-
 ## Deleting entire lines
 
 There may be instances where you'd want to delete large chunks of code at a time (it happens to the best of us!). 
@@ -57,8 +55,6 @@ As an example, below you can see how we might use this to first delete one of th
 
 ![**Image 3:** *Deleting selected lines of code.*](resources/10-deleting-lines.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-deleting-lines.gif)
-
 ## Inserting blank lines
 
 It's also common to need to add a new line of code above or below the current one. Instead of using your mouse or arrow keys to get to the right place and then pressing `Enter`, you can instead use an "insert line" operation.
@@ -66,8 +62,6 @@ It's also common to need to add a new line of code above or below the current on
 Press `Ctrl+Shift+Enter` (`cmd+shift+enter` on MacOS) to insert a blank line directly above the current one and move the cursor to the start of it (Repl.it will even maintain the current level of indentatin for you).
 
 ![**Image 4:** *Inserting lines.*](resources/10-inserting-lines.png)
-
-[*click to open gif*](https://codewithrepl.it/img/10-inserting-lines.gif)
 
 ## Indenting and dedenting lines
 
@@ -84,8 +78,6 @@ Now your code's indentation will be fixed.
 
 ![**Image 5:** *Indenting a line.*](resources/10-indent.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-indent.gif)
-
 ### Moving blocks of code within a file
 
 Sometimes you need to move a block of code up or down in the file. For example, our `update()` function uses our `move()` function, but `move()` is only defined later. For readability, it's good to try ensure that your functions only call functions that have already been defined further up (assuming that someone else is reading the code top down, they will remember the `move()` function's definition before seeing it used).
@@ -94,21 +86,15 @@ Instead of cutting and pasting a block, you can shunt it by pressing `Alt+up` or
 
 ![**Image 6:** *Moving the current line selection.*](resources/10-move-current-line-selection.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-move-current-line-selection.gif)
-
 ## Adding cursors
 
 Sometimes it's useful to make exactly the same changes in multiple places at once. For example, we might want to rename our `speed` attribute to `velocity`. Put your cursor anywhere on the word that you want to change and press `Ctrl+D` (`cmd+D` on MacOS). Repeatedly press `Ctrl+D` to select matching words individually, each with their own cursor. Now you can apply edits and they will appear at each selection, as below.
 
 ![**Image 7:** *Adding cursors to multiple instances of the same selection.*](resources/10-add-cursor-to-selection.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-add-cursor-to-selection.gif)
-
 If you want multiple cursors on consecutive lines, press `Ctrl+Alt+up` or `Ctrl+Alt+down` (`cmd+option+up` and `cmd+option+down` on MacOs). For example, if we want a square game we could change both width and height to be `1000` simultaneously as follows.
 
 ![**Image 8:** *Adding cursors to multiple lines.*](resources/10-adding-cursors.png)
-
-[*click to open gif*](https://codewithrepl.it/img/10-adding-cursors.gif)
 
 ## Navigating to specific pieces of code
 
@@ -118,15 +104,11 @@ If you're reading a piece of code that calls a function and you want to quickly 
 
 ![**Image 9:** *Peeking the definition.*](resources/10-peek-definition.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-peek-definition.gif)
-
 The **go to line** operation (`Ctrl+G`) allows you to navigate to a line by giving its line number. This is useful to track down the source of those error messages that tell you what line had an issue, or if you're on a call with someone who says "I'm looking at line 23" and you can quickly jump to the same place.
 
 Finally, you can open a specific file by searching for a part of the name by pressing `Ctrl+P` (`cmd+P` on MacOS), which can be quicker than scrolling through the files pane if you have a lot of files.
 
 ![**Image 10:** *Opening existing files.*](resources/10-open-files.png)
-
-[*click to open gif*](https://codewithrepl.it/img/10-open-files.gif)
 
 ## Vim and Emacs key bindings
 
