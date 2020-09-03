@@ -213,7 +213,7 @@ tree.plot_tree(classifier,feature_names = vectorizer.get_feature_names(), rounde
 fig.savefig('tree.png')
 ```
 
-In the left-hand pane, you should see a file called 'tree.png'. If you open it, your tree graph should looks as follows:
+In the left-hand pane, you should see a file called 'tree.png'. If you open it, your tree graph should look as follows:
 
 ![A visualised decision tree](resources/decision_tree.png)
 
