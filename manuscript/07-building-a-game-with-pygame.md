@@ -100,7 +100,7 @@ Now modify your game loop to include a call to the new `update()` method. The lo
 
 The `(0, 1)` tuple causes the ball to move its Y coordinate by 1 each loop and keep a constant X coordinate. This has the effect of making the ball drop slowly down the screen. Run your code again to check that this works.
 
-![**Image 4:** *The ball falling at a constant rate.*](resources/07-falling-ball.png)]
+![**Image 4:** *The ball falling at a constant rate.*](resources/07-falling-ball.png)
 
 [*click to open gif*](https://www.codewithrepl.it/img/07-falling-ball.gif)
 
@@ -274,7 +274,7 @@ To kill balls when they fall through the floor, we can add another check to the 
 
 Run the code again and you should be able to juggle three balls. See how long you can keep them in the air.
 
-![**Image 6:** *Juggling three balls.*](resources/07-three-balls.png)]
+![**Image 6:** *Juggling three balls.*](resources/07-three-balls.png)
 
 [*click to open gif*](https://www.codewithrepl.it/img/07-three-balls.gif)
 
