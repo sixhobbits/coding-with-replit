@@ -40,7 +40,7 @@ Instead of typing out all three lines, you can type out the first one, leave you
 
 ![**Image 2:** *Copying the current selected line.*](resources/10-copy-current-line.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-copy-current-line.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-copy-current-line.gif)
 
 ## Deleting entire lines
 
@@ -53,11 +53,11 @@ Instead of deleting the entire line, you can also delete from your cursor up to 
 * `Ctrl+Backspace` (`cmd+backspace` on MacOS) to delete backwards
 * `Ctrl+K` (same on MacOS) to delete forwards
 
-As an example, below you can see how we might use this to first delete one of the our `elif` blocks by doing two "delete line" operations. We then change our random speed to be constant by using a "delete to end of line" operation from the `=` sign and then typing our constant.([Click](https://codewithrepl.it/img/10-deleting-lines.gif) to open gif)
+As an example, below you can see how we might use this to first delete one of the our `elif` blocks by doing two "delete line" operations. We then change our random speed to be constant by using a "delete to end of line" operation from the `=` sign and then typing our constant.
 
 ![**Image 3:** *Deleting selected lines of code.*](resources/10-deleting-lines.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-deleting-lines.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-deleting-lines.gif)
 
 ## Inserting blank lines
 
@@ -67,7 +67,7 @@ Press `Ctrl+Shift+Enter` (`cmd+shift+enter` on MacOS) to insert a blank line dir
 
 ![**Image 4:** *Inserting lines.*](resources/10-inserting-lines.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-inserting-lines.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-inserting-lines.gif)
 
 ## Indenting and dedenting lines
 
@@ -84,7 +84,7 @@ Now your code's indentation will be fixed.
 
 ![**Image 5:** *Indenting a line.*](resources/10-indent.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-indent.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-indent.gif)
 
 ### Moving blocks of code within a file
 
@@ -94,7 +94,7 @@ Instead of cutting and pasting a block, you can shunt it by pressing `Alt+up` or
 
 ![**Image 6:** *Moving the current line selection.*](resources/10-move-current-line-selection.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-move-current-line-selection.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-move-current-line-selection.gif)
 
 ## Adding cursors
 
@@ -102,13 +102,13 @@ Sometimes it's useful to make exactly the same changes in multiple places at onc
 
 ![**Image 7:** *Adding cursors to multiple instances of the same selection.*](resources/10-add-cursor-to-selection.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-add-cursor-to-selection.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-add-cursor-to-selection.gif)
 
 If you want multiple cursors on consecutive lines, press `Ctrl+Alt+up` or `Ctrl+Alt+down` (`cmd+option+up` and `cmd+option+down` on MacOs). For example, if we want a square game we could change both width and height to be `1000` simultaneously as follows.
 
 ![**Image 8:** *Adding cursors to multiple lines.*](resources/10-adding-cursors.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-adding-cursors.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-adding-cursors.gif)
 
 ## Navigating to specific pieces of code
 
@@ -118,7 +118,7 @@ If you're reading a piece of code that calls a function and you want to quickly 
 
 ![**Image 9:** *Peeking the definition.*](resources/10-peek-definition.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-peek-definition.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-peek-definition.gif)
 
 The **go to line** operation (`Ctrl+G`) allows you to navigate to a line by giving its line number. This is useful to track down the source of those error messages that tell you what line had an issue, or if you're on a call with someone who says "I'm looking at line 23" and you can quickly jump to the same place.
 
@@ -126,7 +126,7 @@ Finally, you can open a specific file by searching for a part of the name by pre
 
 ![**Image 10:** *Opening existing files.*](resources/10-open-files.png)
 
-[*click to open gif*](https://codewithrepl.it/img/10-open-files.gif)
+[*click to open gif*](https://www.codewithrepl.it/img/10-open-files.gif)
 
 ## Vim and Emacs key bindings
 
