@@ -55,7 +55,7 @@ Instead of deleting the entire line, you can also delete from your cursor up to 
 
 As an example, below you can see how we might use this to first delete one of the our `elif` blocks by doing two "delete line" operations. We then change our random speed to be constant by using a "delete to end of line" operation from the `=` sign and then typing our constant.([Click](https://codewithrepl.it/img/10-deleting-lines.gif) to open gif)
 
-![**Image 3:** *Deleting selected lines of code.*](resources/10-deleting-lines.png)]
+![**Image 3:** *Deleting selected lines of code.*](resources/10-deleting-lines.png)
 
 [*click to open gif*](https://codewithrepl.it/img/10-deleting-lines.gif)
 
